@@ -1,0 +1,14 @@
+*.csv
+*.old
+*.html
+*.rds
+*.Rhistory
+.Rproj.user/*
+.Rproj.user
+Data/*
+*.sif
+*.Rds
+*SingularityBuild/build_info.txt
+*.pdf
+./Processing/00a_transfer_data.R
+./PostProcessing/MSA_report/
