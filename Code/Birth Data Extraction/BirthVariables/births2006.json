@@ -1,0 +1,1414 @@
+{
+  "revision": {
+    "comment": "Revision U;R",
+    "pos": [6, 7]
+  },
+  "dob_yy": {
+    "comment": "Birth Year U;R",
+    "pos": [14, 18]
+  },
+  "dob_mm": {
+    "comment": "Birth Month U;R",
+    "pos": [18, 20]
+  },
+  "dob_wk": {
+    "comment": "Weekday U;R",
+    "pos": [28, 29]
+  },
+  "oterr": {
+    "comment": "Occurrence Territory/Possession U;R",
+    "pos": [29, 31]
+  },
+  "ocntyfips": {
+    "comment": "Occurrence FIPS County U;R",
+    "pos": [36, 39]
+  },
+  "ocntypop": {
+    "comment": "Occurence County Population U;R",
+    "pos": [39, 40]
+  },
+  "bfacil": {
+    "comment": "Birth Place R",
+    "pos": [40, 41]
+  },
+  "ubfacil": {
+    "comment": "Birth Place U;R",
+    "pos": [41, 42]
+  },
+  "bfacil3": {
+    "comment": "Birth Place Recode U;R",
+    "pos": [58, 59]
+  },
+  "mage_impflg": {
+    "comment": "Mother's Age Imputated Flag U;R",
+    "pos": [86, 87]
+  },
+  "mage_repflg": {
+    "comment": "Reported Age of Mother Flag U;R",
+    "pos": [87, 88]
+  },
+  "mager": {
+    "comment": "Mother's Single Year of Age U;R",
+    "pos": [88, 90]
+  },
+  "mager14": {
+    "comment": "Mother's Age Recode 14 U;R",
+    "pos": [90, 92]
+  },
+  "mager9": {
+    "comment": "Mother's Age Recode 9 U;R",
+    "pos": [92, 93]
+  },
+  "mbcntry": {
+    "comment": "Mother's Birth Country R",
+    "pos": [93, 95]
+  },
+  "mrterr": {
+    "comment": "Mother's Residence Territory/Posession U;R",
+    "pos": [108, 110]
+  },
+  "rcnty_pop": {
+    "comment": "Population of Residence County U;R",
+    "pos": [131, 132]
+  },
+  "rectype": {
+    "comment": "Record Type U;R",
+    "pos": [136, 137]
+  },
+  "restatus": {
+    "comment": "Residence Status U;R",
+    "pos": [137, 138]
+  },
+  "mbrace": {
+    "comment": "Mother's Bridged Race** R***",
+    "pos": [138, 140]
+  },
+  "mrace": {
+    "comment": "Mother's Race U",
+    "pos": [140, 142]
+  },
+  "mracerec": {
+    "comment": "Mother's Race Recode U;R",
+    "pos": [142, 143]
+  },
+  "mraceimp": {
+    "comment": "Mother's Race Imputed Flag U;R",
+    "pos": [143, 144]
+  },
+  "umhisp": {
+    "comment": "Mother's Hispanic Origin RFP 569=f_morigin U;R",
+    "pos": [147, 148]
+  },
+  "mracehisp": {
+    "comment": "Mother's Race/Hispanic Origin RFP 569=f_morigin  U;R",
+    "pos": [148, 149]
+  },
+  "mar": {
+    "comment": "Mother's Marital Status U;R",
+    "pos": [152, 153]
+  },
+  "mar_imp": {
+    "comment": "Mother's Marital Status Imputed Flag U;R",
+    "pos": [153, 154]
+  },
+  "meduc": {
+    "comment": "Mother's Education RFP 571=f_meduc R",
+    "pos": [154, 155]
+  },
+  "dmeduc": {
+    "comment": "Mother's Education RFP 647=f_med  U",
+    "pos": [155, 157]
+  },
+  "meduc_rec": {
+    "comment": "Mother's Education Recode RFP 647=f_med U",
+    "pos": [157, 158]
+  },
+  "fagerpt_flg": {
+    "comment": "Father's Reported Age Used U;R",
+    "pos": [174, 175]
+  },
+  "fagecomb": {
+    "comment": "Father's Combined Age (Revised) R",
+    "pos": [181, 183]
+  },
+  "ufagecomb": {
+    "comment": "Father's Combined Age U;R",
+    "pos": [183, 185]
+  },
+  "fagerec11": {
+    "comment": "Father's Age Recode 11 U;R",
+    "pos": [185, 187]
+  },
+  "fbrace": {
+    "comment": "Father's Bridged Race R**",
+    "pos": [187, 189]
+  },
+  "fracerec": {
+    "comment": "Father's Race Recode U;R",
+    "pos": [190, 191]
+  },
+  "ufhisp": {
+    "comment": "Father's Hispanic Origin RFP 570=f_forigin U;R",
+    "pos": [194, 195]
+  },
+  "fracehisp": {
+    "comment": "Father's Race/Hispanic Origin RFP 570=f_forigin U;R",
+    "pos": [195, 196]
+  },
+  "frace": {
+    "comment": "Father's Race U",
+    "pos": [198, 200]
+  },
+  "lbo_rec": {
+    "comment": "Live Birth Order Recode U;R",
+    "pos": [211, 212]
+  },
+  "tbo_rec": {
+    "comment": "Total Birth Order Recode U;R",
+    "pos": [216, 217]
+  },
+  "dllb_mm": {
+    "comment": "Date of Last Live Birth - Month R",
+    "pos": [219, 221]
+  },
+  "dllb_yy": {
+    "comment": "Date of Last Live Birth - Year R",
+    "pos": [221, 225]
+  },
+  "precare": {
+    "comment": "Month Prenatal Care Began RFP 668=f_mpcb R",
+    "pos": [244, 246]
+  },
+  "precare_rec": {
+    "comment": "Month Prenatal Care Began Recode RFP 668=f_mpcb R",
+    "pos": [246, 247]
+  },
+  "mpcb": {
+    "comment": "Month Prenatal Care Began RFP 669=f_mpcb_u U",
+    "pos": [255, 257]
+  },
+  "mpcb_rec6": {
+    "comment": "Month Prenatal Care Began Recode 6 RFP 669=f_mpcb_u U",
+    "pos": [257, 258]
+  },
+  "mpcb_rec5": {
+    "comment": "Month Prenatal Care Began Recode 5 RFP 669=f_mpcb_u U",
+    "pos": [258, 259]
+  },
+  "uprevis": {
+    "comment": "Number of Prenatal Visits U;R",
+    "pos": [269, 271]
+  },
+  "previs_rec": {
+    "comment": "Number of Prenatal Visits Recode U;R",
+    "pos": [271, 273]
+  },
+  "apncu": {
+    "comment": "Adequacy of Prenatal Care Utilization Index RFP 668=f_mpcb R",
+    "pos": [274, 275]
+  },
+  "wtgain": {
+    "comment": "Weight Gain RFP 648=f_wtgain U;R",
+    "pos": [275, 277]
+  },
+  "wtgain_rec": {
+    "comment": "Weight Gain Recode RFP 648=f_wtgain U;R",
+    "pos": [277, 278]
+  },
+  "u_apncu": {
+    "comment": "Adequacy of Prenatal Care Utilization Index RFP 669=f_mpcb_u U",
+    "pos": [278, 279]
+  },
+  "dfpc_imp": {
+    "comment": "Day of Date First Prenatal Care Imputed R",
+    "pos": [279, 280]
+  },
+  "cig_1": {
+    "comment": "Cigarettes 1st Trimester RFP 575=f_tobaco R",
+    "pos": [283, 285]
+  },
+  "cig_2": {
+    "comment": "Cigarettes 2nd Trimester RFP 575=f_tobaco R",
+    "pos": [285, 287]
+  },
+  "cig_3": {
+    "comment": "Cigarettes 3rd Trimester RFP 575=f_tobaco R",
+    "pos": [287, 289]
+  },
+  "tobuse": {
+    "comment": "Tobacco Use RFP 667=f_tobac U",
+    "pos": [289, 290]
+  },
+  "cigs": {
+    "comment": "Cigarettes Per Day U",
+    "pos": [290, 292]
+  },
+  "cig_rec6": {
+    "comment": "Cigarettes Recode U",
+    "pos": [292, 293]
+  },
+  "cig_rec": {
+    "comment": "Cigarettes Recode RFP 575=f_tobaco R",
+    "pos": [293, 294]
+  },
+  "alcohol": {
+    "comment": "Alcohol Use RFP 649=f_alcol U",
+    "pos": [294, 295]
+  },
+  "drinks": {
+    "comment": "Drinks Per Week RFP 649=f_alcol U",
+    "pos": [295, 297]
+  },
+  "drinks_rec": {
+    "comment": "Drinks Recode RFP 649=f_alcol U",
+    "pos": [297, 298]
+  },
+  "rf_diab": {
+    "comment": "Prepregnancy Diabetes RFP 582=f_rf_diab R",
+    "pos": [312, 313]
+  },
+  "rf_gest": {
+    "comment": "Gestational Diabetes RFP 583=f_rf_gdiab R",
+    "pos": [313, 314]
+  },
+  "rf_phyp": {
+    "comment": "Prepregnancy Hypertension RFP 584=f_rf_phyper R",
+    "pos": [314, 315]
+  },
+  "rf_ghyp": {
+    "comment": "Gestational Hypertension RFP 585=f_rf_ghyper R",
+    "pos": [315, 316]
+  },
+  "rf_eclam": {
+    "comment": "Eclampsia RFP 586=rf_eclamp R",
+    "pos": [316, 317]
+  },
+  "rf_ppterm": {
+    "comment": "Previous Preterm Birth RFP 587=f_rf_ppb R",
+    "pos": [317, 318]
+  },
+  "rf_ppoutc": {
+    "comment": "Poor Pregnancy Outcome RFP 588=f_rf_ppo R",
+    "pos": [318, 319]
+  },
+  "rf_cesar": {
+    "comment": "Previous Cesarean Deliveries RFP 593=f_rf_cesar R",
+    "pos": [323, 324]
+  },
+  "rf_cesarn": {
+    "comment": "Number of Previous Cesarean Deliveries RFP 594=f_rf_ncesar R",
+    "pos": [324, 326]
+  },
+  "urf_anemia": {
+    "comment": "Anemia RFP 681=f_urf_anemia U",
+    "pos": [327, 328]
+  },
+  "urf_card": {
+    "comment": "Cardiac RFP 682=f_urf_cardiac U",
+    "pos": [328, 329]
+  },
+  "urf_lung": {
+    "comment": "Acute or Chronic Lung Disease RFP 683=f_urf_lung U",
+    "pos": [329, 330]
+  },
+  "urf_diab": {
+    "comment": "Diabetes RFP 684=f_urf_diabetes U;R",
+    "pos": [330, 331]
+  },
+  "urf_gen": {
+    "comment": "Genital Herpes RFP 685=f_urf_herpes U",
+    "pos": [331, 332]
+  },
+  "urf_hydra": {
+    "comment": "Hydramnios/Oligohydramnios RFP 686=f_urf_hydra U",
+    "pos": [332, 333]
+  },
+  "urf_hemo": {
+    "comment": "Hemoglobinopathy RFP 687=f_urf_hemo U",
+    "pos": [333, 334]
+  },
+  "urf_chyper": {
+    "comment": "Chronic Hypertension RFP 688=f_urf_chyper U;R",
+    "pos": [334, 335]
+  },
+  "urf_phyper": {
+    "comment": "Pregnancy Associated Hypertension RFP 689=f_urf_phyper U;R",
+    "pos": [335, 336]
+  },
+  "urf_eclam": {
+    "comment": "Eclampsia RFP 690=f_urf_eclamp U;R",
+    "pos": [336, 337]
+  },
+  "urf_incerv": {
+    "comment": "Incompetent cervix RFP 691=f_urf_incervix U",
+    "pos": [337, 338]
+  },
+  "urf_pre4000": {
+    "comment": "Previous infant 4000+ Grams RFP 692=f_urf_pre4000 U",
+    "pos": [338, 339]
+  },
+  "urf_preterm": {
+    "comment": "Previous Preterm or Small for Gestation RFP 693=f_urf_preterm U",
+    "pos": [339, 340]
+  },
+  "urf_renal": {
+    "comment": "Renal disease RFP 694=f_urf_renal U",
+    "pos": [340, 341]
+  },
+  "urf_rh": {
+    "comment": "Rh sensitization RFP 695=f_urf_rh U",
+    "pos": [341, 342]
+  },
+  "urf_uterine": {
+    "comment": "Uterine bleeding RFP 696=f_urf_uterine U",
+    "pos": [342, 343]
+  },
+  "urf_other": {
+    "comment": "Other Medical Risk Factors RFP 697=f_urf_othermr U",
+    "pos": [343, 344]
+  },
+  "op_cerv": {
+    "comment": "Cervical Cerclage RFP 601=f_ob_cervic R",
+    "pos": [350, 351]
+  },
+  "op_tocol": {
+    "comment": "Tocolysis RFP 602=f_ob_toco R",
+    "pos": [351, 352]
+  },
+  "op_ecvs": {
+    "comment": "Successful External Cephalic Version RFP 603=f_ob_succ R",
+    "pos": [352, 353]
+  },
+  "op_ecvf": {
+    "comment": "Failed External Cephalic Version RFP 604=f_ob_fail R",
+    "pos": [353, 354]
+  },
+  "uop_amnio": {
+    "comment": "Amniocentesis U",
+    "pos": [354, 355]
+  },
+  "uop_monit": {
+    "comment": "Electronic Fetal Monitoring U",
+    "pos": [355, 356]
+  },
+  "uop_induc": {
+    "comment": "Induction of labor U;R",
+    "pos": [356, 357]
+  },
+  "uop_stiml": {
+    "comment": "Stimulation of labor U",
+    "pos": [357, 358]
+  },
+  "uop_tocol": {
+    "comment": "Tocolysis U;R",
+    "pos": [358, 359]
+  },
+  "uop_ultra": {
+    "comment": "Ultrasound U",
+    "pos": [359, 360]
+  },
+  "uop_other": {
+    "comment": "Other Obstetric Procedures U",
+    "pos": [360, 361]
+  },
+  "on_ruptr": {
+    "comment": "Premature Rupture of Membrane RFP 605=f_on_rupture R",
+    "pos": [361, 362]
+  },
+  "on_precip": {
+    "comment": "Precipitous Labor RFP 606=f_on_precip R",
+    "pos": [362, 363]
+  },
+  "on_prol": {
+    "comment": "Prolonged Labor RFP 607=f_on_prolong R",
+    "pos": [363, 364]
+  },
+  "ld_indl": {
+    "comment": "Induction of Labor RFP 608=f_ld_induct R",
+    "pos": [364, 365]
+  },
+  "ld_augm": {
+    "comment": "Augmentation of Labor RFP 609=f_ld_augment R",
+    "pos": [365, 366]
+  },
+  "ld_nvpr": {
+    "comment": "Non-Vertex Presentation RFP 610=f_ld_nvrtx R",
+    "pos": [366, 367]
+  },
+  "ld_ster": {
+    "comment": "Steroids RFP 611=f_ld_steroids R",
+    "pos": [367, 368]
+  },
+  "ld_anti": {
+    "comment": "Antibiotics RFP 612=f_ld_antibio R",
+    "pos": [368, 369]
+  },
+  "ld_chor": {
+    "comment": "Chorioamnionitis RFP 613=f_ld_chorio R",
+    "pos": [369, 370]
+  },
+  "ld_mecs": {
+    "comment": "Meconium Staining RFP 614=f_ld_mecon R",
+    "pos": [370, 371]
+  },
+  "ld_fint": {
+    "comment": "Fetal Intolerance RFP 615=f_ld_fintol R",
+    "pos": [371, 372]
+  },
+  "ld_anes": {
+    "comment": "Anesthesia RFP 616=f_ld_anesth R",
+    "pos": [372, 373]
+  },
+  "uld_febr": {
+    "comment": "Febrile RFP 711=f_uld_febrile U",
+    "pos": [373, 374]
+  },
+  "uld_meco": {
+    "comment": "Meconium RFP 712=f_uld_meconium U;R",
+    "pos": [374, 375]
+  },
+  "uld_ruptr": {
+    "comment": "Premature Rupture of Membrane RFP 713=f_uld_rupture U",
+    "pos": [375, 376]
+  },
+  "uld_abrup": {
+    "comment": "Abruptio placenta RFP 714=f_uld_abruptio U",
+    "pos": [376, 377]
+  },
+  "uld_prepla": {
+    "comment": "Placenta previa RFP 715=f_uld_preplace U",
+    "pos": [377, 378]
+  },
+  "uld_excbl": {
+    "comment": "Other Excessive Bleeding RFP 716=f_uld_excebld U",
+    "pos": [378, 379]
+  },
+  "uld_seiz": {
+    "comment": "Seizures During Labor RFP 717=f_uld_seizure U",
+    "pos": [379, 380]
+  },
+  "uld_precip": {
+    "comment": "Precipitous labor RFP 718=f_uld_precip U;R",
+    "pos": [380, 381]
+  },
+  "uld_prolg": {
+    "comment": "Prolonged Labor RFP 719=f_uld_prolg U",
+    "pos": [381, 382]
+  },
+  "uld_dysfn": {
+    "comment": "Dysfunctional Labor RFP 720=f_uld_dysfunc U",
+    "pos": [382, 383]
+  },
+  "uld_breech": {
+    "comment": "Breech RFP 721=f_uld_breech U;R",
+    "pos": [383, 384]
+  },
+  "uld_cephal": {
+    "comment": "Cephalopelvic Disproportion RFP 722=f_uld_cephalo U",
+    "pos": [384, 385]
+  },
+  "uld_cord": {
+    "comment": "Cord Prolapse RFP 723=f_uld_cord U",
+    "pos": [385, 386]
+  },
+  "uld_anest": {
+    "comment": "Anesthetic Complications RFP 724=f_uld_anest U",
+    "pos": [386, 387]
+  },
+  "uld_distr": {
+    "comment": "Fetal Distress RFP 725=f_uld_distr U",
+    "pos": [387, 388]
+  },
+  "uld_other": {
+    "comment": "Other Complications RFP 726=f_uld_other U",
+    "pos": [388, 389]
+  },
+  "me_attf": {
+    "comment": "Attempted Forceps RFP 617=f_md_attfor R",
+    "pos": [389, 390]
+  },
+  "me_attv": {
+    "comment": "Attempted Vacuum RFP 618=f_md_attvac R",
+    "pos": [390, 391]
+  },
+  "me_pres": {
+    "comment": "Fetal Presentation RFP 619=f_md_present R",
+    "pos": [391, 392]
+  },
+  "me_rout": {
+    "comment": "Route & Method of Delivery RFP 620=f_md_route R",
+    "pos": [392, 393]
+  },
+  "me_trial": {
+    "comment": "Trial of Labor Attempted RFP 621=f_md_trial R",
+    "pos": [393, 394]
+  },
+  "ume_vag": {
+    "comment": "Vaginal RFP 730=f_u_vag U",
+    "pos": [394, 395]
+  },
+  "ume_vbac": {
+    "comment": "Vaginal after C-Section RFP 731=f_u_vbac U",
+    "pos": [395, 396]
+  },
+  "ume_primc": {
+    "comment": "Primary C-Section RFP 732=f_u_primc U",
+    "pos": [396, 397]
+  },
+  "ume_repec": {
+    "comment": "Repeat C-Section RFP 733=f_u_repec U",
+    "pos": [397, 398]
+  },
+  "ume_forcep": {
+    "comment": "Forceps RFP 734=f_u_forcep U;R",
+    "pos": [398, 399]
+  },
+  "ume_vac": {
+    "comment": "Vacuum RFP 735=f_u_vac U;R",
+    "pos": [399, 400]
+  },
+  "rdmeth_rec": {
+    "comment": "Delivery Method Recode (Revised) R",
+    "pos": [400, 401]
+  },
+  "udmeth_rec": {
+    "comment": "Delivery Method Recode (Unrevised) U",
+    "pos": [401, 402]
+  },
+  "dmeth_rec": {
+    "comment": "Delivery Method Recode U;R",
+    "pos": [402, 403]
+  },
+  "attend": {
+    "comment": "Attendant U;R",
+    "pos": [409, 410]
+  },
+  "apgar5": {
+    "comment": "Five Minute Apgar Score RFP 574=f_apgar5 U;R",
+    "pos": [414, 416]
+  },
+  "apgar5r": {
+    "comment": "Five Minute Apgar Recode RFP 574=f_apgar5 U;R",
+    "pos": [416, 417]
+  },
+  "dplural": {
+    "comment": "Plurality U;R",
+    "pos": [422, 423]
+  },
+  "imp_plur": {
+    "comment": "Plurality Imputed U;R",
+    "pos": [424, 425]
+  },
+  "sex": {
+    "comment": "Sex of Infant U;R",
+    "pos": [435, 436]
+  },
+  "imp_sex": {
+    "comment": "Imputed Sex U;R",
+    "pos": [436, 437]
+  },
+  "dlmp_mm": {
+    "comment": "Last Normal Menses - Month U;R",
+    "pos": [437, 439]
+  },
+  "dlmp_dd": {
+    "comment": "Last Normal Menses - Day U;R",
+    "pos": [439, 441]
+  },
+  "dlmp_yy": {
+    "comment": "Last Normal Menses - Year U;R",
+    "pos": [441, 445]
+  },
+  "estgest": {
+    "comment": "Obstetric/Clinical Gestation Est. RFP 573=f_clinest U;R",
+    "pos": [445, 447]
+  },
+  "combgest": {
+    "comment": "Gestation - Detail in Weeks U;R",
+    "pos": [450, 452]
+  },
+  "gestrec10": {
+    "comment": "Gestation Recode 10 U;R",
+    "pos": [452, 454]
+  },
+  "gestrec3": {
+    "comment": "Gestation Recode 3 U;R",
+    "pos": [454, 455]
+  },
+  "obgest_flg": {
+    "comment": "Clinical Estimate of Gestation Used Flag U;R",
+    "pos": [455, 456]
+  },
+  "gest_imp": {
+    "comment": "Gestation Imputed Flag U;R",
+    "pos": [456, 457]
+  },
+  "dbwt": {
+    "comment": "Birth Weight - Detail in Grams U;R",
+    "pos": [462, 466]
+  },
+  "bwtr12": {
+    "comment": "Birth Weight Recode 12 U;R",
+    "pos": [470, 472]
+  },
+  "bwtr4": {
+    "comment": "Birth Weight Recode 4 U;R",
+    "pos": [472, 473]
+  },
+  "ab_aven1": {
+    "comment": "Assisted Ventilation RFP 628=f_ab_vent R",
+    "pos": [475, 476]
+  },
+  "ab_aven6": {
+    "comment": "Assisted Ventilation >6 hrs RFP 629=f_ab_vent6 R",
+    "pos": [476, 477]
+  },
+  "ab_nicu": {
+    "comment": "Admission to NICU RFP 630=f_ab_nicu R",
+    "pos": [477, 478]
+  },
+  "ab_surf": {
+    "comment": "Surfactant RFP 631=f_ab_surfac R",
+    "pos": [478, 479]
+  },
+  "ab_anti": {
+    "comment": "Antibiotics RFP 632=f_ab_antibio R",
+    "pos": [479, 480]
+  },
+  "ab_seiz": {
+    "comment": "Seizures RFP 633=f_ab_seiz R",
+    "pos": [480, 481]
+  },
+  "ab_binj": {
+    "comment": "Birth Injury RFP 634=f_ab_inj R",
+    "pos": [481, 482]
+  },
+  "uab_anem": {
+    "comment": "Anemia RFP 740=f_uab_anemia U",
+    "pos": [482, 483]
+  },
+  "uab_injury": {
+    "comment": "Birth Injury RFP 741=f_uab_injury U",
+    "pos": [483, 484]
+  },
+  "uab_alcoh": {
+    "comment": "Fetal Alcohol Syndrome RFP 742=f_uab_alcosyn U",
+    "pos": [484, 485]
+  },
+  "uab_hyal": {
+    "comment": "Hyaline Membrane Disease RFP 743=f_uab_hyaline U",
+    "pos": [485, 486]
+  },
+  "uab_mecon": {
+    "comment": "Meconium Aspiration Syndrome RFP 744=f_uab_meconsyn U",
+    "pos": [486, 487]
+  },
+  "uab_venl30": {
+    "comment": "Assisted Ventilation < 30 min RFP 745=f_uab_venl30 U",
+    "pos": [487, 488]
+  },
+  "uab_ven30m": {
+    "comment": "Assisted Ventilation >= 30 min RFP 746=f_uab_ven30m U",
+    "pos": [488, 489]
+  },
+  "uab_nseiz": {
+    "comment": "Seizures RFP 747=f_uab_seiz U",
+    "pos": [489, 490]
+  },
+  "uab_other": {
+    "comment": "Other Abnormal Conditions RFP 748=f_uab_otherab U",
+    "pos": [490, 491]
+  },
+  "ca_anen": {
+    "comment": "Anencephaly RFP 635=f_ca_anen R",
+    "pos": [491, 492]
+  },
+  "ca_mnsb": {
+    "comment": "Meningomyelocele/Spina Bifida RFP 636=f_ca_menin R",
+    "pos": [492, 493]
+  },
+  "ca_cchd": {
+    "comment": "Cyanotic Congenital Heart Disease RFP 637=f_ca_heart R",
+    "pos": [493, 494]
+  },
+  "ca_cdh": {
+    "comment": "Congenital Diaphragmatic Hernia RFP 638=f_ca_hernia R",
+    "pos": [494, 495]
+  },
+  "ca_omph": {
+    "comment": "Omphalocele RFP 639=f_ca_ompha R",
+    "pos": [495, 496]
+  },
+  "ca_gast": {
+    "comment": "Gastroschisis RFP 640=f_ca_gastro R",
+    "pos": [496, 497]
+  },
+  "ca_limb": {
+    "comment": "Limb Reduction Defect RFP 641=f_ca_limb R",
+    "pos": [497, 498]
+  },
+  "ca_cleft": {
+    "comment": "Cleft Lip w/ or w/o Cleft Palate RFP 642=f_ca_cleflp R",
+    "pos": [498, 499]
+  },
+  "ca_clpal": {
+    "comment": "Cleft Palate alone RFP 643=f_ca_cleft R",
+    "pos": [499, 500]
+  },
+  "ca_down": {
+    "comment": "Downs Syndrome RFP 644=f_ca_downs R",
+    "pos": [500, 501]
+  },
+  "ca_disor": {
+    "comment": "Suspected Chromosonal Disorder RFP 645=f_ca_chrom R",
+    "pos": [501, 502]
+  },
+  "ca_hypo": {
+    "comment": "Hypospadias RFP 646=f_ca_hypos R",
+    "pos": [502, 503]
+  },
+  "uca_anen": {
+    "comment": "Anencephalus RFP 752=f_uca_anen U;R",
+    "pos": [503, 504]
+  },
+  "uca_spina": {
+    "comment": "Spina bifida/Meningocele RFP 753=f_uca_spina U;R",
+    "pos": [504, 505]
+  },
+  "uca_hydro": {
+    "comment": "Hydrocephalus RFP 754=f_uca_hydro U",
+    "pos": [505, 506]
+  },
+  "uca_micro": {
+    "comment": "Microcephalus RFP 755=f_uca_microce U",
+    "pos": [506, 507]
+  },
+  "uca_nerv": {
+    "comment": "Other Central Nervous System Anomalies RFP 756=f_uca_nervous U",
+    "pos": [507, 508]
+  },
+  "uca_heart": {
+    "comment": "Heart malformations RFP 757=f_uca_heart U",
+    "pos": [508, 509]
+  },
+  "uca_circ": {
+    "comment": "Other Circulatory/Respiratory Anomalies RFP 758=f_uca_circul U",
+    "pos": [509, 510]
+  },
+  "uca_rectal": {
+    "comment": "Rectal Atresia/Stenosis RFP 759=f_uca_rectal U",
+    "pos": [510, 511]
+  },
+  "uca_trach": {
+    "comment": "Tracheo-Esophageal Fistula RFP 760=f_uca_tracheo U",
+    "pos": [511, 512]
+  },
+  "uca_ompha": {
+    "comment": "Omphalocele/Gastroschisis RFP 761=f_uca_omphalo U;R",
+    "pos": [512, 513]
+  },
+  "uca_gastro": {
+    "comment": "Other Gastrointestinal Anomalies RFP 762=f_uca_gastro U",
+    "pos": [513, 514]
+  },
+  "uca_genital": {
+    "comment": "Malformed Genitalia RFP 763=f_uca_genital U",
+    "pos": [514, 515]
+  },
+  "uca_renal": {
+    "comment": "Renal Agenesis RFP 764=f_uca_renalag U",
+    "pos": [515, 516]
+  },
+  "uca_urogen": {
+    "comment": "Other Urogenital Anomalies RFP 765=f_uca_urogen U",
+    "pos": [516, 517]
+  },
+  "uca_cleftlp": {
+    "comment": "Cleft Lip/Palate RFP 766=f_uca_cleftlp U;R",
+    "pos": [517, 518]
+  },
+  "uca_adactyly": {
+    "comment": "Polydactyly/Syndactyly/Adactyly RFP 767=f_uca_adactyl U",
+    "pos": [518, 519]
+  },
+  "uca_clubft": {
+    "comment": "Club Foot RFP 768=f_uca_club U",
+    "pos": [519, 520]
+  },
+  "uca_hernia": {
+    "comment": "Diaphragmatic Hernia RFP 769=f_uca_hernia U",
+    "pos": [520, 521]
+  },
+  "uca_muscu": {
+    "comment": "Other Musculoskeletal Anomalies RFP 770=f_uca_musculo U",
+    "pos": [521, 522]
+  },
+  "uca_downs": {
+    "comment": "Down Syndrome RFP 771=f_uca_downs U;R",
+    "pos": [522, 523]
+  },
+  "uca_chromo": {
+    "comment": "Other Chromosomal Anomalies RFP 772=f_uca_chromo U",
+    "pos": [523, 524]
+  },
+  "uca_other": {
+    "comment": "Other Congenital Anomalies RFP 773=f_uca_othrcon U",
+    "pos": [524, 525]
+  },
+  "f_morigin": {
+    "comment": "Origin of Mother (umhisp",
+    "pos": [568, 569]
+  },
+  "f_forigin": {
+    "comment": "Origin of Father (ufhisp",
+    "pos": [569, 570]
+  },
+  "f_meduc": {
+    "comment": "Education of Mother (meduc) R",
+    "pos": [570, 571]
+  },
+  "f_clinest": {
+    "comment": "Clinical Estimate of Gestation (estgest) U;R",
+    "pos": [572, 573]
+  },
+  "f_apgar5": {
+    "comment": "5 - minute Apgar (apgar5",
+    "pos": [573, 574]
+  },
+  "f_tobaco": {
+    "comment": "Tobacco use (cig_1",
+    "pos": [574, 575]
+  },
+  "f_rf_pdiab": {
+    "comment": "Prepregnancy Diabetes (rf_diab) R",
+    "pos": [581, 582]
+  },
+  "f_rf_gdiab": {
+    "comment": "Gestational Diabetes (rf_gest) R",
+    "pos": [582, 583]
+  },
+  "f_rf_phyper": {
+    "comment": "Prepregnancy Hypertension (rf_phyp) R",
+    "pos": [583, 584]
+  },
+  "f_rf_ghyper": {
+    "comment": "Gestational Hypertension (rf_ghyp) R",
+    "pos": [584, 585]
+  },
+  "f_rf_eclamp": {
+    "comment": "Eclampsia (rf_eclam) R",
+    "pos": [585, 586]
+  },
+  "f_rf_ppb": {
+    "comment": "Previous Preterm Birth (rf_ppterm) R",
+    "pos": [586, 587]
+  },
+  "f_rf_ppo": {
+    "comment": "Poor Pregnancy Outcomes (rf_ppoutc) R",
+    "pos": [587, 588]
+  },
+  "f_rf_cesar": {
+    "comment": "Previous Cesarean (rf_cesar) R",
+    "pos": [592, 593]
+  },
+  "f_rf_ncesar": {
+    "comment": "Number of Previous Cesareans (rf_cesarn) R",
+    "pos": [593, 594]
+  },
+  "f_ob_cervic": {
+    "comment": "Cervical Cerelage (op_cerv) R",
+    "pos": [600, 601]
+  },
+  "f_ob_toco": {
+    "comment": "Tocolysis (op_tocol) R",
+    "pos": [601, 602]
+  },
+  "f_ob_succ": {
+    "comment": "Successful External Cephalic Version (op_ecvs) R",
+    "pos": [602, 603]
+  },
+  "f_ob_fail": {
+    "comment": "Failed External Cephalic Version (op_ecvf) R",
+    "pos": [603, 604]
+  },
+  "f_on_rupture": {
+    "comment": "Premature Rupture of the Membranes (on_ruptr) R",
+    "pos": [604, 605]
+  },
+  "f_on_precip": {
+    "comment": "Precipitous Labor (on_precip) R",
+    "pos": [605, 606]
+  },
+  "f_on_prolong": {
+    "comment": "Prolonged Labor (on_prol) R",
+    "pos": [606, 607]
+  },
+  "f_ld_induct": {
+    "comment": "Induction of Labor (ld_indl) R",
+    "pos": [607, 608]
+  },
+  "f_ld_augment": {
+    "comment": "Augmentation of Labor (ld_augm) R",
+    "pos": [608, 609]
+  },
+  "f_ld_nvrtx": {
+    "comment": "Non-Vertex Presentation (ld_nvpr) R",
+    "pos": [609, 610]
+  },
+  "f_ld_steroids": {
+    "comment": "Steroids (ld_ster) R",
+    "pos": [610, 611]
+  },
+  "f_ld_antibio": {
+    "comment": "Antibiotics (ld_anti) R",
+    "pos": [611, 612]
+  },
+  "f_ld_chorio": {
+    "comment": "Chorioamnionitis (ld_chor) R",
+    "pos": [612, 613]
+  },
+  "f_ld_mecon": {
+    "comment": "Meconium Staining (ld_mecs) R",
+    "pos": [613, 614]
+  },
+  "f_ld_fintol": {
+    "comment": "Fetal Intolerance (ld_fint) R",
+    "pos": [614, 615]
+  },
+  "f_ld_anesth": {
+    "comment": "Anesthesia (ld_anes) R",
+    "pos": [615, 616]
+  },
+  "f_md_attfor": {
+    "comment": "Attempted Forceps (me_attf) R",
+    "pos": [616, 617]
+  },
+  "f_md_attvac": {
+    "comment": "Attempted Vacuum (me_attv) R",
+    "pos": [617, 618]
+  },
+  "f_md_present": {
+    "comment": "Fetal Presentation (me_pres) R",
+    "pos": [618, 619]
+  },
+  "f_md_route": {
+    "comment": "Fetal Route and Method of Delivery (me_rout) R",
+    "pos": [619, 620]
+  },
+  "f_md_trial": {
+    "comment": "Trial of Labor Attempted (me_trial) R",
+    "pos": [620, 621]
+  },
+  "f_ab_vent": {
+    "comment": "Assisted Ventilation (ab_aven1) R",
+    "pos": [627, 628]
+  },
+  "f_ab_vent6": {
+    "comment": "Assisted Ventilation >6hrs (ab_aven6) R",
+    "pos": [628, 629]
+  },
+  "f_ab_nicu": {
+    "comment": "Admission to NICU (ab_nicu) R",
+    "pos": [629, 630]
+  },
+  "f_ab_surfac": {
+    "comment": "Surfactant (ab_surf) R",
+    "pos": [630, 631]
+  },
+  "f_ab_antibio": {
+    "comment": "Antibiotics (ab_anti) R",
+    "pos": [631, 632]
+  },
+  "f_ab_seiz": {
+    "comment": "Seizures (ab_seiz) R",
+    "pos": [632, 633]
+  },
+  "f_ab_inj": {
+    "comment": "Birth Injury (ab_binj) R",
+    "pos": [633, 634]
+  },
+  "f_ca_anen": {
+    "comment": "Anencephaly (ca_anen) R",
+    "pos": [634, 635]
+  },
+  "f_ca_menin": {
+    "comment": "Meningomyelocele/Spina Bifida (ca_mnsb) R",
+    "pos": [635, 636]
+  },
+  "f_ca_heart": {
+    "comment": "Cyanotic Congenital Heart Disease (ca_cchd) R",
+    "pos": [636, 637]
+  },
+  "f_ca_hernia": {
+    "comment": "Congenital Diaphragmatic Hernia (ca_cdh) R",
+    "pos": [637, 638]
+  },
+  "f_ca_ompha": {
+    "comment": "Omphalocele (ca_omph) R",
+    "pos": [638, 639]
+  },
+  "f_ca_gastro": {
+    "comment": "Gastroschisis (ca_gast) R",
+    "pos": [639, 640]
+  },
+  "f_ca_limb": {
+    "comment": "Limb Reduction Defect (ca_limb) R",
+    "pos": [640, 641]
+  },
+  "f_ca_cleftlp": {
+    "comment": "Cleft Lip w/ or w/o Cleft Palate (ca_cleft) R",
+    "pos": [641, 642]
+  },
+  "f_ca_cleft": {
+    "comment": "Cleft Palate alone (ca_clpal) R",
+    "pos": [642, 643]
+  },
+  "f_ca_downs": {
+    "comment": "Downs Syndrome (ca_down) R",
+    "pos": [643, 644]
+  },
+  "f_ca_chrom": {
+    "comment": "Suspected Chromosonal Disorder (ca_disor) R",
+    "pos": [644, 645]
+  },
+  "f_ca_hypos": {
+    "comment": "Hypospadias (ca_hypo) R",
+    "pos": [645, 646]
+  },
+  "f_med": {
+    "comment": "Mother's Education (dmeduc",
+    "pos": [646, 647]
+  },
+  "f_wtgain": {
+    "comment": "Weight gain (wtgain",
+    "pos": [647, 648]
+  },
+  "f_alcol": {
+    "comment": "Alcohol use (drinks",
+    "pos": [648, 649]
+  },
+  "f_api": {
+    "comment": "API codes U",
+    "pos": [649, 650]
+  },
+  "f_tobac": {
+    "comment": "Tobacco use (tobuse) U",
+    "pos": [666, 667]
+  },
+  "f_mpcb": {
+    "comment": "Month Prenatal Care Began (precare",
+    "pos": [667, 668]
+  },
+  "f_mpcb_u": {
+    "comment": "Month Prenatal Care Began (mpcb",
+    "pos": [668, 669]
+  },
+  "f_urf_anemia": {
+    "comment": "Anemia (urf_anemia) U",
+    "pos": [680, 681]
+  },
+  "f_urf_cardiac": {
+    "comment": "Cardiac (urf_card) U",
+    "pos": [681, 682]
+  },
+  "f_urf_lung": {
+    "comment": "Acute or Chronic Lung Disease (urf_lung) U",
+    "pos": [682, 683]
+  },
+  "f_urf_diabetes": {
+    "comment": "Diabetes (urf_diab) U",
+    "pos": [683, 684]
+  },
+  "f_urf_herpes": {
+    "comment": "Genital Herpes (urf_gen) U",
+    "pos": [684, 685]
+  },
+  "f_urf_hydra": {
+    "comment": "Hydramnios/Oligohydramnios (urf_hydra) U",
+    "pos": [685, 686]
+  },
+  "f_urf_hemo": {
+    "comment": "Hemoglobinopathy (urf_hemo) U",
+    "pos": [686, 687]
+  },
+  "f_urf_chyper": {
+    "comment": "Chronic Hypertension (urf_chyper) U",
+    "pos": [687, 688]
+  },
+  "f_urf_phyper": {
+    "comment": "Pregnancy Associated Hypertension (urf_phyper) U",
+    "pos": [688, 689]
+  },
+  "f_urf_eclamp": {
+    "comment": "Eclampsia (urf_eclam) U",
+    "pos": [689, 690]
+  },
+  "f_urf_incervix": {
+    "comment": "Incompetent Cervix (urf_incerv) U",
+    "pos": [690, 691]
+  },
+  "f_urf_pre4000": {
+    "comment": "Previous Infant 4000+ Grams (urf_pre4000) U",
+    "pos": [691, 692]
+  },
+  "f_urf_preterm": {
+    "comment": "Previous Preterm Small for Gestation (urf_preterm) U",
+    "pos": [692, 693]
+  },
+  "f_urf_renal": {
+    "comment": "Renal Disease (urf_renal) U",
+    "pos": [693, 694]
+  },
+  "f_urf_rh": {
+    "comment": "Rh Sensitization (urf_rh) U",
+    "pos": [694, 695]
+  },
+  "f_urf_uterine": {
+    "comment": "Uterine Bleeding (urf_uterine) U",
+    "pos": [695, 696]
+  },
+  "f_urf_othermr": {
+    "comment": "Other Medical Risk Factors (urf_other) U",
+    "pos": [696, 697]
+  },
+  "f_uob_amnio": {
+    "comment": "Amniocentesis U",
+    "pos": [700, 701]
+  },
+  "f_uob_monitor": {
+    "comment": "Electronic Fetal Monitoring U",
+    "pos": [701, 702]
+  },
+  "f_uob_induct": {
+    "comment": "Induction of labor U",
+    "pos": [702, 703]
+  },
+  "f_uob_stimul": {
+    "comment": "Stimulation of labor U",
+    "pos": [703, 704]
+  },
+  "f_uob_tocol": {
+    "comment": "Tocolysis U",
+    "pos": [704, 705]
+  },
+  "f_uob_ultras": {
+    "comment": "Ultrasound U",
+    "pos": [705, 706]
+  },
+  "f_uob_otherob": {
+    "comment": "Other Obstetric Procedures U",
+    "pos": [706, 707]
+  },
+  "f_uld_febrile": {
+    "comment": "Febrile (uld_febr) U",
+    "pos": [710, 711]
+  },
+  "f_uld_meconium": {
+    "comment": "Meconium (uld_mecs) U",
+    "pos": [711, 712]
+  },
+  "f_uld_rupture": {
+    "comment": "Premature Rupture of Membrane (uld_ruptr) U",
+    "pos": [712, 713]
+  },
+  "f_uld_abruptio": {
+    "comment": "Abruptio placenta (uld_abrup) U",
+    "pos": [713, 714]
+  },
+  "f_uld_preplace": {
+    "comment": "Placenta previa (uld_prepla) U",
+    "pos": [714, 715]
+  },
+  "f_uld_excebld": {
+    "comment": "Other Excessive Bleeding (uld_excbl) U",
+    "pos": [715, 716]
+  },
+  "f_uld_seizure": {
+    "comment": "Seizures During Labor (uld_seiz) U",
+    "pos": [716, 717]
+  },
+  "f_uld_precip": {
+    "comment": "Precipitous labor (uld_precip) U",
+    "pos": [717, 718]
+  },
+  "f_uld_prolg": {
+    "comment": "Prolonged Labor (uld_prolg) U",
+    "pos": [718, 719]
+  },
+  "f_uld_dysfunc": {
+    "comment": "Dysfunctional Labor (uld_dysfn) U",
+    "pos": [719, 720]
+  },
+  "f_uld_breech": {
+    "comment": "Breech (uld_breech) U",
+    "pos": [720, 721]
+  },
+  "f_uld_cephalo": {
+    "comment": "Cephalopelvic Disproportion (uld_cephal) U",
+    "pos": [721, 722]
+  },
+  "f_uld_cord": {
+    "comment": "Cord Prolapse (uld_cord) U",
+    "pos": [722, 723]
+  },
+  "f_uld_anest": {
+    "comment": "Anesthetic Complications (uld_anest) U",
+    "pos": [723, 724]
+  },
+  "f_uld_distr": {
+    "comment": "Fetal Distress (uld_distr) U",
+    "pos": [724, 725]
+  },
+  "f_uld_other": {
+    "comment": "Other Complications (uld_other) U",
+    "pos": [725, 726]
+  },
+  "f_u_vag": {
+    "comment": "Vaginal (ume_vag) U",
+    "pos": [729, 730]
+  },
+  "f_u_vbac": {
+    "comment": "Vaginal after C-Section (ume_vbac) U",
+    "pos": [730, 731]
+  },
+  "f_u_primc": {
+    "comment": "Primary C-Section (ume_primc) U",
+    "pos": [731, 732]
+  },
+  "f_u_repec": {
+    "comment": "Repeat C-Section (ume_repec) U",
+    "pos": [732, 733]
+  },
+  "f_u_forcep": {
+    "comment": "Forceps (ume_forcep) U",
+    "pos": [733, 734]
+  },
+  "f_u_vac": {
+    "comment": "Vacuum (ume_vac) U",
+    "pos": [734, 735]
+  },
+  "f_uab_anemia": {
+    "comment": "Anemia (uab_anem) U",
+    "pos": [739, 740]
+  },
+  "f_uab_injury": {
+    "comment": "Birth Injury (uab_injury) U",
+    "pos": [740, 741]
+  },
+  "f_uab_alcosyn": {
+    "comment": "Fetal Alcohol Syndrome (uab_alcoh) U",
+    "pos": [741, 742]
+  },
+  "f_uab_hyaline": {
+    "comment": "Hyaline Membrane Disease (uab_hyal) U",
+    "pos": [742, 743]
+  },
+  "f_uab_meconsyn": {
+    "comment": "Meconium Aspiration Syndrome (uab_mecon) U",
+    "pos": [743, 744]
+  },
+  "f_uab_venl30": {
+    "comment": "Assisted Ventilation <30 min (uab_venl30) U",
+    "pos": [744, 745]
+  },
+  "f_uab_ven30m": {
+    "comment": "Assisted Ventilation >=30 min (uab_ven30m) U",
+    "pos": [745, 746]
+  },
+  "f_uab_seiz": {
+    "comment": "Seizures (uab_nseiz) U",
+    "pos": [746, 747]
+  },
+  "f_uab_otherab": {
+    "comment": "Other Abnormal Conditions (uab_other) U",
+    "pos": [747, 748]
+  },
+  "f_uca_anen": {
+    "comment": "Anencephalus (uca_anen) U",
+    "pos": [751, 752]
+  },
+  "f_uca_spina": {
+    "comment": "Spina bifida/Meningocele (uca_spina) U",
+    "pos": [752, 753]
+  },
+  "f_uca_hydro": {
+    "comment": "Hydrocephalus (uca_hydro) U",
+    "pos": [753, 754]
+  },
+  "f_uca_microce": {
+    "comment": "Microcephalus (uca_micro) U",
+    "pos": [754, 755]
+  },
+  "f_uca_nervous": {
+    "comment": "Other Central Nervous System Anomalies (uca_nerv) U",
+    "pos": [755, 756]
+  },
+  "f_uca_heart": {
+    "comment": "Heart malformations (uca_heart) U",
+    "pos": [756, 757]
+  },
+  "f_uca_circul": {
+    "comment": "Other Circulatory/Respiratory Anomalies (uca_circ) U",
+    "pos": [757, 758]
+  },
+  "f_uca_rectal": {
+    "comment": "Rectal Atresia/Stenosis (uca_rectal) U",
+    "pos": [758, 759]
+  },
+  "f_uca_tracheo": {
+    "comment": "Tracheo-Esophageal Fistula (uca_trach) U",
+    "pos": [759, 760]
+  },
+  "f_uca_omphalo": {
+    "comment": "Omphalocele/Gastroschisis (uca_ompha) U",
+    "pos": [760, 761]
+  },
+  "f_uca_gastro": {
+    "comment": "Other Gastrointestinal Anomalies (uca_gastro) U",
+    "pos": [761, 762]
+  },
+  "f_uca_genital": {
+    "comment": "Malformed Genitalia (uca_genital) U",
+    "pos": [762, 763]
+  },
+  "f_uca_renalag": {
+    "comment": "Renal Agenesis (uca_renal) U",
+    "pos": [763, 764]
+  },
+  "f_uca_urogen": {
+    "comment": "Other Urogenital Anomalies (uca_urogen) U",
+    "pos": [764, 765]
+  },
+  "f_uca_cleftlp": {
+    "comment": "Cleft Lip/Palate (uca_cleftlp) U",
+    "pos": [765, 766]
+  },
+  "f_uca_adactyl": {
+    "comment": "Polydactyly/Syndactyly/Adactyly (uca_adactyly) U",
+    "pos": [766, 767]
+  },
+  "f_uca_club": {
+    "comment": "Club Foot (uca_clubft) U",
+    "pos": [767, 768]
+  },
+  "f_uca_hernia": {
+    "comment": "Diaphragmatic Hernia (uca_hernia) U",
+    "pos": [768, 769]
+  },
+  "f_uca_musculo": {
+    "comment": "Other Musculoskeletal Anomalies (uca_muscu) U",
+    "pos": [769, 770]
+  },
+  "f_uca_downs": {
+    "comment": "Down Syndrome (ucs_downs) U",
+    "pos": [770, 771]
+  },
+  "f_uca_chromo": {
+    "comment": "Other Chromosomal Anomalies (uca_chromo) U",
+    "pos": [771, 772]
+  },
+  "f_uca_othrcon": {
+    "comment": "Other Congenital Anomalies (uca_other) U",
+    "pos": [772, 773]
+  }
+}

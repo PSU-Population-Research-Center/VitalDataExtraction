@@ -1,0 +1,962 @@
+{
+  "dob_yy": {
+    "comment": "Birth Year",
+    "pos": [8, 12]
+  },
+  "dob_mm": {
+    "comment": "Birth Month 01 January",
+    "pos": [12, 14]
+  },
+  "dob_tt": {
+    "comment": "Time of Birth 0000-2359 Time of Birth",
+    "pos": [18, 22]
+  },
+  "dob_wk": {
+    "comment": "Birth Day of Week 1 Sunday",
+    "pos": [22, 23]
+  },
+  "bfacil": {
+    "comment": "Birth Place 1 Hospital",
+    "pos": [31, 32]
+  },
+  "f_facility": {
+    "comment": "Reporting Flag for Birth Place 0 Non-Reporting",
+    "pos": [32, 33]
+  },
+  "bfacil3": {
+    "comment": "Facility Recode 1 In Hospital",
+    "pos": [49, 50]
+  },
+  "mage_impflg": {
+    "comment": "Mother's Age Imputed Blank Age not imputed",
+    "pos": [72, 73]
+  },
+  "mage_repflg": {
+    "comment": "Reported Age of Mother Used Flag Blank Reported age not used",
+    "pos": [73, 74]
+  },
+  "mager": {
+    "comment": "Mother's Single Years of Age 12 10 -- 12 years",
+    "pos": [74, 76]
+  },
+  "mager14": {
+    "comment": "Mother's Age Recode 14 01 Under 15 Years",
+    "pos": [76, 78]
+  },
+  "mager9": {
+    "comment": "Mother's Age Recode 9 1 Under 15 years",
+    "pos": [78, 79]
+  },
+  "mbstate_rec": {
+    "comment": "Mother's Nativity 1 Born in the U.S. (50 US States)",
+    "pos": [83, 84]
+  },
+  "restatus": {
+    "comment": "Residence Status",
+    "pos": [103, 104]
+  },
+  "mrace31": {
+    "comment": "Mother's Race Recode 31",
+    "pos": [104, 106]
+  },
+  "mrace6": {
+    "comment": "Mother's Race Recode 6",
+    "pos": [106, 107]
+  },
+  "mrace15": {
+    "comment": "Mother's Race Recode 15",
+    "pos": [107, 109]
+  },
+  "mbrace": {
+    "comment": "Bridged Race Mother",
+    "pos": [109, 110]
+  },
+  "mraceimp": {
+    "comment": "Mother's Race Imputed Flag Blank Mother's race not imputed",
+    "pos": [110, 111]
+  },
+  "mhisp_r": {
+    "comment": "Mother's Hispanic Origin Recode 0 Non-Hispanic",
+    "pos": [114, 115]
+  },
+  "f_mhisp": {
+    "comment": "Reporting Flag for Mother's Origin 0 Non-Reporting",
+    "pos": [115, 116]
+  },
+  "mracehisp": {
+    "comment": "Mother's Race/Hispanic Origin 1 Non-Hispanic White (only)",
+    "pos": [116, 117]
+  },
+  "mar_p": {
+    "comment": "Paternity Acknowledged Y Yes",
+    "pos": [118, 119]
+  },
+  "dmar": {
+    "comment": "Marital Status",
+    "pos": [119, 120]
+  },
+  "mar_imp": {
+    "comment": "Mother's Marital Status Imputed Blank Marital Status not imputed",
+    "pos": [120, 121]
+  },
+  "f_mar_p": {
+    "comment": "Reporting Flag for Paternity Acknowledged 0 Non-Reporting",
+    "pos": [122, 123]
+  },
+  "meduc": {
+    "comment": "Mother's Education 1 8th grade or less",
+    "pos": [123, 124]
+  },
+  "f_meduc": {
+    "comment": "Reporting Flag for Education of Mother 0 Non-Reporting",
+    "pos": [125, 126]
+  },
+  "fagerpt_flg": {
+    "comment": "Father's Reported Age Used Blank Father's reported age not u",
+    "pos": [141, 142]
+  },
+  "fagecomb": {
+    "comment": "Father's Combined Age (Revised) 09-98 Father's combined age in ye",
+    "pos": [146, 148]
+  },
+  "fagerec11": {
+    "comment": "Father's Age Recode 11 01 Under 15 years",
+    "pos": [148, 150]
+  },
+  "frace31": {
+    "comment": "Father's Race Recode 31 01 White (only) [only one race",
+    "pos": [150, 152]
+  },
+  "frace6": {
+    "comment": "Father's Race Recode 6 1 White (only)",
+    "pos": [152, 153]
+  },
+  "frace15": {
+    "comment": "Father's Race Recode 15 01 White (only)",
+    "pos": [153, 155]
+  },
+  "fbrace": {
+    "comment": "Bridged Race Father 1 White",
+    "pos": [155, 156]
+  },
+  "fhisp_r": {
+    "comment": "Father's Hispanic Origin Recode 0 Non-Hispanic",
+    "pos": [159, 160]
+  },
+  "f_fhisp": {
+    "comment": "Reporting Flag for Father's Origin 0 Non-Reporting",
+    "pos": [160, 161]
+  },
+  "fracehisp": {
+    "comment": "Father's Race/Hispanic Origin 1 Non-Hispanic White (only)",
+    "pos": [161, 162]
+  },
+  "feduc": {
+    "comment": "Father's Education 1 8th grade or less",
+    "pos": [162, 163]
+  },
+  "priorlive": {
+    "comment": "Prior Births Now Living 00-30 Number of children still li",
+    "pos": [170, 172]
+  },
+  "priordead": {
+    "comment": "Prior Births Now Dead 00-30 Number of children dead fro",
+    "pos": [172, 174]
+  },
+  "priorterm": {
+    "comment": "Prior Other Terminations 00-30 Number other terminations",
+    "pos": [174, 176]
+  },
+  "lbo_rec": {
+    "comment": "Live Birth Order Recode 1-7 Number of live birth order.",
+    "pos": [178, 179]
+  },
+  "tbo_rec": {
+    "comment": "Total Birth Order Recode 1-7 Number of total birth order",
+    "pos": [181, 182]
+  },
+  "illb_r": {
+    "comment": "Interval Since Last Live Birth Recode 000-003 Plural delivery",
+    "pos": [197, 200]
+  },
+  "illb_r11": {
+    "comment": "Interval Since Last Live Birth Recode 11 00 Zero to 3 months (plural de",
+    "pos": [200, 202]
+  },
+  "ilop_r": {
+    "comment": "Interval Since Last Other Pregnancy Recode 000-003 Plural delivery",
+    "pos": [205, 208]
+  },
+  "ilop_r11": {
+    "comment": "Interval Since Last Other Pregnancy Recode 11 00 Zero to 3 months (plural de",
+    "pos": [208, 210]
+  },
+  "ilp_r": {
+    "comment": "Interval Since Last Pregnancy Recode 000-003 Plural delivery",
+    "pos": [213, 216]
+  },
+  "ilp_r11": {
+    "comment": "Interval Since Last Pregnancy Recode 11 00 Zero to 3 months (plural de",
+    "pos": [216, 218]
+  },
+  "precare": {
+    "comment": "Month Prenatal Care Began 00 No prenatal care",
+    "pos": [223, 225]
+  },
+  "f_mpcb": {
+    "comment": "Reporting Flag for Month Prenatal Care Began 0 Non-Reporting",
+    "pos": [225, 226]
+  },
+  "precare5": {
+    "comment": "Month Prenatal Care Began Recode 1 1st to 3rd month",
+    "pos": [226, 227]
+  },
+  "previs": {
+    "comment": "Number of Prenatal Visits (Revised only) 00-98 Number of prenatal visits",
+    "pos": [237, 239]
+  },
+  "previs_rec": {
+    "comment": "Number of Prenatal Visits Recode 01 No visits",
+    "pos": [241, 243]
+  },
+  "f_tpcv": {
+    "comment": "Reporting Flag for Total Prenatal Care Visits 0 Non-Reporting",
+    "pos": [243, 244]
+  },
+  "wic": {
+    "comment": "WIC Y Yes",
+    "pos": [250, 251]
+  },
+  "f_wic": {
+    "comment": "Reporting Flag for WIC 0 Non-Reporting",
+    "pos": [251, 252]
+  },
+  "cig_0": {
+    "comment": "Cigarettes Before Pregnancy 00-97 Number of cigarettes daily",
+    "pos": [252, 254]
+  },
+  "cig_1": {
+    "comment": "Cigarettes 1st Trimester 00-97 Number of cigarettes daily",
+    "pos": [254, 256]
+  },
+  "cig_2": {
+    "comment": "Cigarettes 2nd Trimester 00-97 Number of cigarettes daily",
+    "pos": [256, 258]
+  },
+  "cig_3": {
+    "comment": "Cigarettes 3rd Trimester 00-97 Number of cigarettes daily",
+    "pos": [258, 260]
+  },
+  "cig0_r": {
+    "comment": "Cigarettes Before Pregnancy Recode 0 Nonsmoker",
+    "pos": [260, 261]
+  },
+  "cig1_r": {
+    "comment": "Cigarettes 1st Trimester Recode 0 Nonsmoker",
+    "pos": [261, 262]
+  },
+  "cig2_r": {
+    "comment": "Cigarettes 2nd Trimester Recode 0 Nonsmoker",
+    "pos": [262, 263]
+  },
+  "cig3_r": {
+    "comment": "Cigarettes 3rd Trimester Recode 0 Nonsmoker",
+    "pos": [263, 264]
+  },
+  "f_cigs_0": {
+    "comment": "Reporting Flag for Cigarettes before Pregnancy 0 Non-Reporting",
+    "pos": [264, 265]
+  },
+  "f_cigs_1": {
+    "comment": "Reporting Flag for Cigarettes 1st Trimester 0 Non-Reporting",
+    "pos": [265, 266]
+  },
+  "f_cigs_2": {
+    "comment": "Reporting Flag for Cigarettes 2nd Trimester 0 Non-Reporting",
+    "pos": [266, 267]
+  },
+  "f_cigs_3": {
+    "comment": "Reporting Flag for Cigarettes 3rd Trimester 0 Non-Reporting",
+    "pos": [267, 268]
+  },
+  "cig_rec": {
+    "comment": "Cigarette Recode (Revised) Y Yes",
+    "pos": [268, 269]
+  },
+  "f_tobaco": {
+    "comment": "Reporting Flag for Tobacco use 0 Non-Reporting",
+    "pos": [269, 270]
+  },
+  "m_ht_in": {
+    "comment": "Mother's Height in Total Inches 30-78 Height in inches",
+    "pos": [279, 281]
+  },
+  "f_m_ht": {
+    "comment": "Reporting Flag for Mother's Height 0 Non-Reporting",
+    "pos": [281, 282]
+  },
+  "bmi": {
+    "comment": "Body Mass Index 13.0-69.9 Body Mass Index",
+    "pos": [282, 286.1]
+  },
+  "bmi_r": {
+    "comment": "Body Mass Index Recode 1 Underweight <18.5",
+    "pos": [286, 287]
+  },
+  "pwgt_r": {
+    "comment": "Pre-pregnancy Weight Recode 075-375 Weight in pounds",
+    "pos": [291, 294]
+  },
+  "f_pwgt": {
+    "comment": "Reporting Flag for Pre-pregnancy Weight 0 Non-Reporting",
+    "pos": [294, 295]
+  },
+  "dwgt_r": {
+    "comment": "Delivery Weight Recode 100-400 Weight in pounds",
+    "pos": [298, 301]
+  },
+  "f_dwgt": {
+    "comment": "Reporting Flag for Delivery Weight 0 Non-Reporting",
+    "pos": [302, 303]
+  },
+  "wtgain": {
+    "comment": "Weight Gain 00-97 Weight gain in pounds",
+    "pos": [303, 305]
+  },
+  "wtgain_rec": {
+    "comment": "Weight Gain Recode 1 Less than 11 pounds",
+    "pos": [305, 306]
+  },
+  "f_wtgain": {
+    "comment": "Reporting Flag for Weight Gain 0 Non-Reporting",
+    "pos": [306, 307]
+  },
+  "rf_pdiab": {
+    "comment": "Pre-pregnancy Diabetes Y Yes",
+    "pos": [312, 313]
+  },
+  "rf_gdiab": {
+    "comment": "Gestational Diabetes Y Yes",
+    "pos": [313, 314]
+  },
+  "rf_phype": {
+    "comment": "Pre-pregnancy Hypertension Y Yes",
+    "pos": [314, 315]
+  },
+  "rf_ghype": {
+    "comment": "Gestational Hypertension Y Yes",
+    "pos": [315, 316]
+  },
+  "rf_ehype": {
+    "comment": "Hypertension Eclampsia Y Yes",
+    "pos": [316, 317]
+  },
+  "rf_ppterm": {
+    "comment": "Previous Preterm Birth Y Yes",
+    "pos": [317, 318]
+  },
+  "f_rf_pdiab": {
+    "comment": "Reporting Flag for Pre-pregnancy Diabetes 0 Non-Reporting",
+    "pos": [318, 319]
+  },
+  "f_rf_gdiab": {
+    "comment": "Reporting Flag for Gestational Diabetes 0 Non-Reporting",
+    "pos": [319, 320]
+  },
+  "f_rf_phyper": {
+    "comment": "Reporting Flag for Pre-pregnancy Hypertension 0 Non-Reporting",
+    "pos": [320, 321]
+  },
+  "f_rf_ghyper": {
+    "comment": "Reporting Flag for Gestational Hypertension 0 Non-Reporting",
+    "pos": [321, 322]
+  },
+  "f_rf_eclamp": {
+    "comment": "Reporting Flag for Hypertension Eclampsia 0 Non-Reporting",
+    "pos": [322, 323]
+  },
+  "f_rf_ppb": {
+    "comment": "Reporting Flag for Previous Preterm Birth 0 Non-Reporting",
+    "pos": [323, 324]
+  },
+  "rf_inftr": {
+    "comment": "Infertility Treatment Used Y Yes",
+    "pos": [324, 325]
+  },
+  "rf_fedrg": {
+    "comment": "Fertility Enhancing Drugs Y Yes",
+    "pos": [325, 326]
+  },
+  "rf_artec": {
+    "comment": "Asst. Reproductive Technology Y Yes",
+    "pos": [326, 327]
+  },
+  "f_rf_inf_drg": {
+    "comment": "Reporting Flag for Fertility Enhance Drugs 0 Non-Reporting",
+    "pos": [328, 329]
+  },
+  "f_rf_inf_art": {
+    "comment": "Reporting Flag for Reproductive Technology 0 Non-Reporting",
+    "pos": [329, 330]
+  },
+  "rf_cesar": {
+    "comment": "Previous Cesarean Y Yes",
+    "pos": [330, 331]
+  },
+  "rf_cesarn": {
+    "comment": "Number of Previous Cesareans 00 None",
+    "pos": [331, 333]
+  },
+  "f_rf_cesar": {
+    "comment": "Reporting Flag for Previous Cesarean 0 Non-Reporting",
+    "pos": [334, 335]
+  },
+  "f_rf_ncesar": {
+    "comment": "Reporting Flag for Number of Previous Cesareans 0 Non-Reporting",
+    "pos": [335, 336]
+  },
+  "no_risks": {
+    "comment": "No Risk Factors Reported 1 True",
+    "pos": [336, 337]
+  },
+  "ip_gon": {
+    "comment": "Gonorrhea Y Yes",
+    "pos": [342, 343]
+  },
+  "ip_syph": {
+    "comment": "Syphilis Y Yes",
+    "pos": [343, 344]
+  },
+  "ip_chlam": {
+    "comment": "Chlamydia Y Yes",
+    "pos": [344, 345]
+  },
+  "ip_hepatb": {
+    "comment": "Hepatitis B Y Yes",
+    "pos": [345, 346]
+  },
+  "ip_hepatc": {
+    "comment": "Hepatitis C Y Yes",
+    "pos": [346, 347]
+  },
+  "f_ip_gonor": {
+    "comment": "Reporting Flag for Gonorrhea 0 Non-Reporting",
+    "pos": [347, 348]
+  },
+  "f_ip_syph": {
+    "comment": "Reporting Flag for Syphilis 0 Non-Reporting",
+    "pos": [348, 349]
+  },
+  "f_ip_chlam": {
+    "comment": "Reporting Flag for Chlamydia 0 Non-Reporting",
+    "pos": [349, 350]
+  },
+  "f_ip_hepatb": {
+    "comment": "Reporting Flag for Hepatitis B 0 Non-Reporting",
+    "pos": [350, 351]
+  },
+  "f_ip_hepatc": {
+    "comment": "Reporting Flag for Hepatitis C 0 Non-Reporting",
+    "pos": [351, 352]
+  },
+  "no_infec": {
+    "comment": "No Infections Reported 1 True",
+    "pos": [352, 353]
+  },
+  "ob_ecvs": {
+    "comment": "Successful External Cephalic Version Y Yes",
+    "pos": [359, 360]
+  },
+  "ob_ecvf": {
+    "comment": "Failed External Cephalic Version Y Yes",
+    "pos": [360, 361]
+  },
+  "f_ob_succ": {
+    "comment": "Reporting Flag for Successful External Cephalic Version0 Non-Reporting",
+    "pos": [362, 363]
+  },
+  "f_ob_fail": {
+    "comment": "Reporting Flag for Failed External Cephalic Version 0 Non-Reporting",
+    "pos": [363, 364]
+  },
+  "ld_indl": {
+    "comment": "Induction of Labor Y Yes",
+    "pos": [382, 383]
+  },
+  "ld_augm": {
+    "comment": "Augmentation of Labor Y Yes",
+    "pos": [383, 384]
+  },
+  "ld_ster": {
+    "comment": "Steroids Y Yes",
+    "pos": [384, 385]
+  },
+  "ld_antb": {
+    "comment": "Antibiotics Y Yes",
+    "pos": [385, 386]
+  },
+  "ld_chor": {
+    "comment": "Chorioamnionitis Y Yes",
+    "pos": [386, 387]
+  },
+  "ld_anes": {
+    "comment": "Anesthesia Y Yes",
+    "pos": [387, 388]
+  },
+  "f_ld_indl": {
+    "comment": "Reporting Flag for Induction of Labor 0 Non-Reporting",
+    "pos": [388, 389]
+  },
+  "f_ld_augm": {
+    "comment": "Reporting Flag for Augmentation of Labor 0 Non-Reporting",
+    "pos": [389, 390]
+  },
+  "f_ld_ster": {
+    "comment": "Reporting Flag for Steroids 0 Non-Reporting",
+    "pos": [390, 391]
+  },
+  "f_ld_antb": {
+    "comment": "Reporting Flag for Antibiotics 0 Non-Reporting",
+    "pos": [391, 392]
+  },
+  "f_ld_chor": {
+    "comment": "Reporting Flag for Chorioamnionitis 0 Non-Reporting",
+    "pos": [392, 393]
+  },
+  "f_ld_anes": {
+    "comment": "Reporting Flag for Anesthesia 0 Non-Reporting",
+    "pos": [393, 394]
+  },
+  "no_lbrdlv": {
+    "comment": "No Characteristics of Labor Reported 1 True",
+    "pos": [394, 395]
+  },
+  "me_pres": {
+    "comment": "Fetal Presentation at Delivery 1 Cephalic",
+    "pos": [400, 401]
+  },
+  "me_rout": {
+    "comment": "Final Route & Method of Delivery 1 Spontaneous",
+    "pos": [401, 402]
+  },
+  "me_trial": {
+    "comment": "Trial of Labor Attempted (if cesarean) Y Yes",
+    "pos": [402, 403]
+  },
+  "f_me_pres": {
+    "comment": "Reporting Flag for Fetal Presentation 0 Non-Reporting",
+    "pos": [403, 404]
+  },
+  "f_me_rout": {
+    "comment": "Reporting Flag for Final Route and Method of Deliver 0 Non-Reporting",
+    "pos": [404, 405]
+  },
+  "f_me_trial": {
+    "comment": "Reporting Flag for Trial of Labor Attempted 0 Non-Reporting",
+    "pos": [405, 406]
+  },
+  "rdmeth_rec": {
+    "comment": "Delivery Method Recode (revised only) 1 Vaginal (excludes vaginal a",
+    "pos": [406, 407]
+  },
+  "dmeth_rec": {
+    "comment": "Delivery Method Recode Combined 1 Vaginal",
+    "pos": [407, 408]
+  },
+  "f_dmeth_rec": {
+    "comment": "Reporting Flag for Method of Delivery Recode 0 Non-Reporting",
+    "pos": [408, 409]
+  },
+  "mm_mtr": {
+    "comment": "Maternal Transfusion Y Yes",
+    "pos": [414, 415]
+  },
+  "mm_plac": {
+    "comment": "Perineal Laceration Y Yes",
+    "pos": [415, 416]
+  },
+  "mm_rupt": {
+    "comment": "Ruptured Uterus Y Yes",
+    "pos": [416, 417]
+  },
+  "mm_uhyst": {
+    "comment": "Unplanned Hysterectomy Y Yes",
+    "pos": [417, 418]
+  },
+  "mm_aicu": {
+    "comment": "Admit to Intensive Care Y Yes",
+    "pos": [418, 419]
+  },
+  "f_mm_mtr": {
+    "comment": "Reporting Flag for Maternal Transfusion 0 Non-Reporting",
+    "pos": [420, 421]
+  },
+  "f_mm_": {
+    "comment": "PLAC Reporting Flag for Perineal Laceration 0 Non-Reporting",
+    "pos": [421, 422]
+  },
+  "f_mm_rupt": {
+    "comment": "Reporting Flag for Ruptured Uterus 0 Non-Reporting",
+    "pos": [422, 423]
+  },
+  "f_mm_uhyst": {
+    "comment": "Reporting Flag for Unplanned Hysterectomy 0 Non-Reporting",
+    "pos": [423, 424]
+  },
+  "f_mm_aicu": {
+    "comment": "Reporting Flag for Admission to Intensive Care 0 Non-Reporting",
+    "pos": [424, 425]
+  },
+  "no_mmorb": {
+    "comment": "No Maternal Morbidity Reported 1 True",
+    "pos": [426, 427]
+  },
+  "attend": {
+    "comment": "Attendant at Birth 1 Doctor of Medicine (MD)",
+    "pos": [432, 433]
+  },
+  "mtran": {
+    "comment": "Mother Transferred Y Yes",
+    "pos": [433, 434]
+  },
+  "pay": {
+    "comment": "Payment Source for Delivery 1 Medicaid",
+    "pos": [434, 435]
+  },
+  "pay_rec": {
+    "comment": "Payment Recode 1 Medicaid",
+    "pos": [435, 436]
+  },
+  "f_pay": {
+    "comment": "Reporting Flag for Source of Payment 0 Non-Reporting",
+    "pos": [436, 437]
+  },
+  "f_pay_rec": {
+    "comment": "Reporting Flag for Payment Recode 0 Non-Reporting",
+    "pos": [437, 438]
+  },
+  "apgar5": {
+    "comment": "Five Minute APGAR Score 00-10 A score of 0-10",
+    "pos": [443, 445]
+  },
+  "apgar5r": {
+    "comment": "Five Minute APGAR Recode 1 A score of 0-3",
+    "pos": [445, 446]
+  },
+  "f_apgar5": {
+    "comment": "Reporting Flag for Five minute APGAR 0 Non-Reporting",
+    "pos": [446, 447]
+  },
+  "apgar10": {
+    "comment": "Ten Minute APGAR Score 00-10 A score of 0-10",
+    "pos": [447, 449]
+  },
+  "apgar10r": {
+    "comment": "Ten Minute APGAR Recode 1 A score of 0-3",
+    "pos": [449, 450]
+  },
+  "dplural": {
+    "comment": "Plurality Recode 1 Single",
+    "pos": [453, 454]
+  },
+  "imp_plur": {
+    "comment": "Plurality Imputed Blank Plurality is imputed",
+    "pos": [455, 456]
+  },
+  "setorder_r": {
+    "comment": "Set Order Recode 1 1st",
+    "pos": [458, 459]
+  },
+  "sex": {
+    "comment": "Sex of Infant M Male",
+    "pos": [474, 475]
+  },
+  "imp_sex": {
+    "comment": "Imputed Sex Blank Infant Sex not Imputed",
+    "pos": [475, 476]
+  },
+  "dlmp_mm": {
+    "comment": "Last Normal Menses Month 01 January",
+    "pos": [476, 478]
+  },
+  "dlmp_yy": {
+    "comment": "Last Normal Menses Year nnnn Year of last normal menses",
+    "pos": [480, 484]
+  },
+  "compgst_imp": {
+    "comment": "Combined Gestation Imputation Flag Blank Combined Gestation is not i",
+    "pos": [487, 488]
+  },
+  "obgest_flg": {
+    "comment": "Obstetric Estimate of Gestation Used Flag Blank Obstetric Estimate is not u",
+    "pos": [488, 489]
+  },
+  "combgest": {
+    "comment": "Combined Gestation -- Detail in Weeks 17-47 17th through 47th week of",
+    "pos": [489, 491]
+  },
+  "gestrec10": {
+    "comment": "Combined Gestation Recode 10 01 Under 20 weeks",
+    "pos": [491, 493]
+  },
+  "gestrec3": {
+    "comment": "Combined Gestation Recode 3 1 Under 37 weeks",
+    "pos": [493, 494]
+  },
+  "lmpused": {
+    "comment": "Combined Gestation Used Flag Blank Combined gestation not used",
+    "pos": [497, 498]
+  },
+  "oegest_comb": {
+    "comment": "Obstetric Estimate Edited 17-47 Weeks of gestation",
+    "pos": [498, 500]
+  },
+  "oegest_r10": {
+    "comment": "Obstetric Estimate Recode10 01 Under 20 weeks",
+    "pos": [500, 502]
+  },
+  "oegest_r3": {
+    "comment": "Obstetric Estimate Recode 3 1 Under 37 weeks",
+    "pos": [502, 503]
+  },
+  "dbwt": {
+    "comment": "Birth Weight -- Detail in Grams (Edited) 0227-8165 Number of grams",
+    "pos": [503, 507]
+  },
+  "bwtr12": {
+    "comment": "Birth Weight Recode 12 01 0227 - 0499 grams",
+    "pos": [508, 510]
+  },
+  "bwtr4": {
+    "comment": "Birth Weight Recode 4 1 0227 - 1499 grams",
+    "pos": [510, 511]
+  },
+  "ab_aven1": {
+    "comment": "Assisted Ventilation (immediately) Y Yes",
+    "pos": [516, 517]
+  },
+  "ab_aven6": {
+    "comment": "Assisted Ventilation > 6 hrs Y Yes",
+    "pos": [517, 518]
+  },
+  "ab_nicu": {
+    "comment": "Admission to NICU Y Yes",
+    "pos": [518, 519]
+  },
+  "ab_surf": {
+    "comment": "Surfactant Y Yes",
+    "pos": [519, 520]
+  },
+  "ab_anti": {
+    "comment": "Antibiotics for Newborn Y Yes",
+    "pos": [520, 521]
+  },
+  "ab_seiz": {
+    "comment": "Seizures Y Yes",
+    "pos": [521, 522]
+  },
+  "f_ab_vent": {
+    "comment": "Reporting Flag for Assisted Ventilation (immediately) 0 Non-Reporting",
+    "pos": [523, 524]
+  },
+  "f_ab_vent6": {
+    "comment": "Reporting Flag for Assisted Ventilation >6 hrs 0 Non-Reporting",
+    "pos": [524, 525]
+  },
+  "f_ab_nicu": {
+    "comment": "Reporting Flag for Admission to NICU 0 Non-Reporting",
+    "pos": [525, 526]
+  },
+  "f_ab_surfac": {
+    "comment": "Reporting Flag for Surfactant 0 Non-Reporting",
+    "pos": [526, 527]
+  },
+  "f_ab_antibio": {
+    "comment": "Reporting Flag for Antibiotics 0 Non-Reporting",
+    "pos": [527, 528]
+  },
+  "f_ab_seiz": {
+    "comment": "Reporting Flag for Seizures 0 Non-Reporting",
+    "pos": [528, 529]
+  },
+  "no_abnorm": {
+    "comment": "No Abnormal Conditions Checked 1 True",
+    "pos": [530, 531]
+  },
+  "ca_anen": {
+    "comment": "Anencephaly Y Yes",
+    "pos": [536, 537]
+  },
+  "ca_mnsb": {
+    "comment": "Meningomyelocele / Spina Bifida Y Yes",
+    "pos": [537, 538]
+  },
+  "ca_cchd": {
+    "comment": "Cyanotic Congenital Heart Disease Y Yes",
+    "pos": [538, 539]
+  },
+  "ca_cdh": {
+    "comment": "Congenital Diaphragmatic Hernia Y Yes",
+    "pos": [539, 540]
+  },
+  "ca_omph": {
+    "comment": "Omphalocele Y Yes",
+    "pos": [540, 541]
+  },
+  "ca_gast": {
+    "comment": "Gastroschisis Y Yes",
+    "pos": [541, 542]
+  },
+  "f_ca_anen": {
+    "comment": "Reporting Flag for Anencephaly 0 Non-Reporting",
+    "pos": [542, 543]
+  },
+  "f_ca_menin": {
+    "comment": "Reporting Flag for Meningomyelocele/Spina Bifida 0 Non-Reporting",
+    "pos": [543, 544]
+  },
+  "f_ca_heart": {
+    "comment": "Reporting Flag for Cyanotic Congenital Heart Disease 0 Non-Reporting",
+    "pos": [544, 545]
+  },
+  "f_ca_hernia": {
+    "comment": "Reporting Flag for Congenital Diaphragmatic Hernia 0 Non-Reporting",
+    "pos": [545, 546]
+  },
+  "f_ca_ompha": {
+    "comment": "Reporting Flag for Omphalocele 0 Non-Reporting",
+    "pos": [546, 547]
+  },
+  "f_ca_gastro": {
+    "comment": "Reporting Flag for Gastroschisis 0 Non-Reporting",
+    "pos": [547, 548]
+  },
+  "ca_limb": {
+    "comment": "Limb Reduction Defect Y Yes",
+    "pos": [548, 549]
+  },
+  "ca_cleft": {
+    "comment": "Cleft Lip w/ or w/o Cleft Palate Y Yes",
+    "pos": [549, 550]
+  },
+  "ca_clpal": {
+    "comment": "Cleft Palate alone Y Yes",
+    "pos": [550, 551]
+  },
+  "ca_downs": {
+    "comment": "Down Syndrome C Confirmed",
+    "pos": [551, 552]
+  },
+  "ca_disor": {
+    "comment": "Suspected Chromosomal Disorder C Confirmed",
+    "pos": [552, 553]
+  },
+  "ca_hypo": {
+    "comment": "Hypospadias Y Yes",
+    "pos": [553, 554]
+  },
+  "f_ca_limb": {
+    "comment": "Reporting Flag for Limb Reduction Defect 0 Non-Reporting",
+    "pos": [554, 555]
+  },
+  "f_ca_cleftlp": {
+    "comment": "Reporting Flag for Cleft Lip with or without Cleft Palate0 Non-Reporting",
+    "pos": [555, 556]
+  },
+  "f_ca_cleft": {
+    "comment": "Reporting Flag for Cleft Plate Alone 0 Non-Reporting",
+    "pos": [556, 557]
+  },
+  "f_ca_downs": {
+    "comment": "Reporting Flag for Down Syndrome 0 Non-Reporting",
+    "pos": [557, 558]
+  },
+  "f_ca_chrom": {
+    "comment": "Reporting Flag for Suspected Chromosomal Disorder 0 Non-Reporting",
+    "pos": [558, 559]
+  },
+  "f_ca_hypos": {
+    "comment": "Reporting Flag for Hypospadias 0 Non-Reporting",
+    "pos": [559, 560]
+  },
+  "no_congen": {
+    "comment": "No Congenital Anomalies Checked 1 True",
+    "pos": [560, 561]
+  },
+  "itran": {
+    "comment": "Infant Transferred Y Yes",
+    "pos": [566, 567]
+  },
+  "ilive": {
+    "comment": "Infant Living at Time of Report Y Yes",
+    "pos": [567, 568]
+  },
+  "bfed": {
+    "comment": "Infant Breastfed at Discharge Y Yes",
+    "pos": [568, 569]
+  },
+  "f_bfed": {
+    "comment": "Reporting Flag for Breastfed at Discharge 0 Non-Reporting",
+    "pos": [569, 570]
+  },
+  "ubfacil": {
+    "comment": "Birth Place 1 Hospital",
+    "pos": [1329, 1330]
+  },
+  "urf_diab": {
+    "comment": "Diabetes 1 Yes",
+    "pos": [1330, 1331]
+  },
+  "urf_chyper": {
+    "comment": "Chronic Hypertension 1 Yes",
+    "pos": [1331, 1332]
+  },
+  "urf_phyper": {
+    "comment": "Pregnancy Associated Hypertension 1 Yes",
+    "pos": [1332, 1333]
+  },
+  "urf_eclam": {
+    "comment": "Eclampsia 1 Yes",
+    "pos": [1333, 1334]
+  },
+  "ume_forcep": {
+    "comment": "Forceps 1 Yes",
+    "pos": [1334, 1335]
+  },
+  "ume_vac": {
+    "comment": "Vacuum 1 Yes",
+    "pos": [1335, 1336]
+  },
+  "uop_induc": {
+    "comment": "Induction of Labor 1 Yes",
+    "pos": [1336, 1337]
+  },
+  "uld_breech": {
+    "comment": "Breech 1 Yes",
+    "pos": [1337, 1338]
+  },
+  "uca_anen": {
+    "comment": "Anencephalus 1 Anomaly reported",
+    "pos": [1339, 1340]
+  },
+  "uca_spina": {
+    "comment": "Spina Bifida / Meningocele 1 Anomaly reported",
+    "pos": [1340, 1341]
+  },
+  "uca_ompha": {
+    "comment": "Omphalocele / Gastroschisis 1 Anomaly reported",
+    "pos": [1341, 1342]
+  },
+  "uca_cleftlp": {
+    "comment": "Cleft Lip / Palate 1 Anomaly reported",
+    "pos": [1342, 1343]
+  },
+  "uca_hernia": {
+    "comment": "Diaphragmatic Hernia 1 Anomaly reported",
+    "pos": [1343, 1344]
+  },
+  "uca_downs": {
+    "comment": "Down Syndrome 1 Anomaly reported",
+    "pos": [1344, 1345]
+  }
+}
