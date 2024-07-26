@@ -17,6 +17,7 @@ class BirthExtraction(object):
         def extract_data(self): 
             return None
 
+
 class NCHSBirthExtraction(BirthExtraction):
         def __init__(self, year):
             super().__init__(year, source = NCHSBIRTHMETA[year]["source"])
@@ -29,6 +30,6 @@ class NCHSBirthExtraction(BirthExtraction):
             raw_df = pd.concat([pd.read_fwf(
                 z.open(sf), names=colnames, colspecs=colspecs) for sf in sfs])
             self.raw_df = raw_df
-        
-        def extract_data(self): 
+
+        def extract_data(self):
             return None

@@ -10,7 +10,7 @@ NCHSBIRTHMETA = {
             "SEX": (188, 189)
         },
         "source": "/vol/share/population_research/_DATA/NCHS_BIRTH/" +
-            "NatAC1990/NATL1990USPS.AllCnty.zip"
+            "NatAC1990/NATL1990.AllCnty.zip"
     },
     1991:{
         "cols":{
@@ -23,7 +23,7 @@ NCHSBIRTHMETA = {
             "SEX": (188, 189)
         },
         "source": "/vol/share/population_research/_DATA/NCHS_BIRTH/" +
-            "NatAC1991/NATL1991USPS.AllCnty.zip"
+            "NatAC1991/NATL1991.AllCnty.zip"
     },
     1992:{
         "cols":{
@@ -36,7 +36,7 @@ NCHSBIRTHMETA = {
             "SEX": (188, 189)
         },
         "source": "/vol/share/population_research/_DATA/NCHS_BIRTH/" +
-            "NatAC1992/NATL1992USPS.AllCnty.zip"
+            "NatAC1992/NATL1992.AllCnty.zip"
     },
     1993:{
         "cols":{
@@ -49,7 +49,7 @@ NCHSBIRTHMETA = {
             "SEX": (188, 189)
         },
         "source": "/vol/share/population_research/_DATA/NCHS_BIRTH/" +
-            "NatAC1993/NATL1993USPS.AllCnty.zip"
+            "NatAC1993/NATL1993.AllCnty.zip"
     },
     1994:{
         "cols":{
@@ -467,6 +467,6 @@ NCHSBIRTHMETA = {
                 "SEX": (474, 475)
         },
         "source": "/vol/share/population_research/_DATA/NCHS_BIRTH/" +
-            "NatAC2020/NATL2020USPS.AllCnty.zip"
+            "NatAC2020/NATL2020usps.AllCnty.zip"
     }
 }
