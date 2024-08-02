@@ -14,10 +14,22 @@ Race variables change over time and given that this process in part tries to har
 |999|      32       |   41  |   009  |     FALSE   | 1/2/09 | 2009 |  3  |  9  |
 
 
-# Questions
-- NCHS as a ground truth
-  - Mostly for total counts but also sometimes for imputed info
-  - Comes from micro data and wonder
-- 2 stage process, reading and documentation of fwf extraction
-- 2 possible ways to extract, all years by variable, or all variables by year
-- 
+# code example
+```python
+import NCHSBirthExtraction from BirthExtraction
+
+# loads an object which will read data for a year state combination
+BirthModule = NCHSBirthExtraction(1994, "OR")
+
+# reads in the raw data
+BirthModule.read_data()
+
+# Extract some data
+BirthModule.extract_age()
+
+# Validate extracts
+BirthModule.validate()
+
+# Write the extracted data
+BirthModule.write_extract()
+```
