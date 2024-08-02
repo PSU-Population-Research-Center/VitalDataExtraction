@@ -28,6 +28,8 @@ def read_nchs_df(year):
     trimmed_lines = [re.sub(" *\\)", ")", str(l)) for l in source_lines]
     sub_lines = [
         l.replace("'", "") for l in trimmed_lines if l.startswith("_col")]
+    sub_lines = [
+        l.replace("\\t", " ") for l in sub_lines if l.startswith("_col")]
     tmp_path = "/tmp/tmp_dta_src"
     f = open(tmp_path, "w")
     f.writelines([s.replace("\\n", "\n") for s in sub_lines])
@@ -127,7 +129,7 @@ class BirthExtraction(object):
 
 
 class NCHSBirthExtraction(BirthExtraction):
-     """
+    """
     Class used to extract birth data from NCHS files.
 
     ...
@@ -140,8 +142,10 @@ class NCHSBirthExtraction(BirthExtraction):
         state of data to extract
     """
     def __init__(self, year, state):
-        super().__init__(
-            year, state, source = NCHSBIRTHMETA[year]["source"])
+        geo_stub = "" if year < 1994 else "USPS"
+        src_str = "/vol/share/population_research/_DATA/NCHS_BIRTH/" +\
+            "NatAC{}/NATL{}{}.AllCnty.zip".format(year, year, geo_stub)
+        super().__init__(year, state, source = src_str)
         self.state_idx = None
         self.data_dict = read_nchs_dict(year)
         self.data_dict_src = "https://data.nber.org/nvss/natality/" +\
