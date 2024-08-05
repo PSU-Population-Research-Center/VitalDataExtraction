@@ -214,6 +214,10 @@ class NCHSBirthExtraction(BirthExtraction):
             for i in range(len(self.state_idx))])
         self.raw_df = raw_df
         self.birth_df = self.raw_df[[]].copy()
+        self.birth_df.loc[:,"mrstate"] = self.state
+        self.birth_df = self.birth_df.merge(read_state_fips_df(), how = "left")
+        self.birth_df = self.birth_df.rename(columns={
+            "mrstate": "STATE", "stresfip": "STATEFP"})
 
     def extract_age(self):
         """
@@ -227,7 +231,7 @@ class NCHSBirthExtraction(BirthExtraction):
             age_df = self.raw_df["mager"]
         self.birth_df.loc[:, "AGE"] = age_df
         return None
-    
+
     def extract_county(self):
         """
         Extracts county (3 digit fips code) from a loaded raw NCHS data frame.
@@ -235,8 +239,9 @@ class NCHSBirthExtraction(BirthExtraction):
         if self.year <= 2002:
             county_df = self.raw_df["cntyres"].apply(lambda x: x[2:5])
         elif self.year >= 2003:
-            county_df = self.raw_df[["mrcntyfips"]]
-        self.birth_df.loc[:, "COUNTY"] = county_df
+            county_df = self.raw_df["mrcntyfips"].copy()
+        self.birth_df.loc[:, "COUNTYFP"] = self.birth_df["STATEFP"].copy() +\
+            county_df
         return None
 
     def extract_mothers_bridged_race4(self):
