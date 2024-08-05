@@ -126,6 +126,20 @@ class BirthExtraction(object):
 
     def read_data(self):
         return None
+    
+    def inspect_data(self):
+        print("NA Counts")
+        print(self.birth_df.apply(lambda x: x.isna().sum(), axis = 0))
+        print(self.birth_df.describe())
+        for c in self.birth_df.columns:
+            print(self.birth_df[c].value_counts())
+        return None
+    
+    def write_data(self):
+        out_dest = "vol/share/population_research/_PROJECTS/PSUPRC_VR/" +\
+            "BIRTHS/" + str(self.year), ".csv"
+        self.birth_df.to_csv(out_dest)
+        return None
 
 
 class NCHSBirthExtraction(BirthExtraction):
@@ -199,19 +213,19 @@ class NCHSBirthExtraction(BirthExtraction):
             dtype = dts, skiprows = skips[i], **kwargs) 
             for i in range(len(self.state_idx))])
         self.raw_df = raw_df
+        self.birth_df = self.raw_df[[]].copy()
 
     def extract_age(self):
         """
         Extracts single year age from a loaded raw NCHS data frame.
         """
         if self.year <= 2002:
-            age_df = self.raw_df[["dmage"]]
-        if self.year == 2003:
-            age_df = self.raw_df[["mager41"]] + 13
-        if self.year > 2003:
-            age_df = self.raw_df[["mager"]]
-        age_df.columns.values[0] = "AGE"
-        self.birth_df = pd.concat([self.birth_df, age_df], axis = 1)
+            age_df = self.raw_df["dmage"]
+        elif self.year == 2003:
+            age_df = self.raw_df["mager41"] + 13
+        elif self.year > 2003:
+            age_df = self.raw_df["mager"]
+        self.birth_df.loc[:, "AGE"] = age_df
         return None
     
     def extract_county(self):
@@ -219,10 +233,66 @@ class NCHSBirthExtraction(BirthExtraction):
         Extracts county (3 digit fips code) from a loaded raw NCHS data frame.
         """
         if self.year <= 2002:
-            county_df = pd.DataFrame(
-                self.raw_df["cntyres"].apply(lambda x: x[2:5]))
-        if self.year >= 2003:
+            county_df = self.raw_df["cntyres"].apply(lambda x: x[2:5])
+        elif self.year >= 2003:
             county_df = self.raw_df[["mrcntyfips"]]
-        county_df.columns.values[0] = "COUNTY"
-        self.birth_df = pd.concat([self.birth_df, county_df], axis = 1)
+        self.birth_df.loc[:, "COUNTY"] = county_df
+        return None
+
+    def extract_mothers_bridged_race4(self):
+        """
+        Extracts brideged race group from NCHS data. Observations will be one of
+        the following 4 groups. White, Black, API (Asian Pacific Islander),
+        AIAN (American Indian Alaskan Native).
+        """
+        if self.year <= 2002:
+            mbrace = pd.Series(pd.NA, index=self.raw_df.index).case_when(
+                [(self.raw_df["mrace"] == 1, "White"),
+                (self.raw_df["mrace"] == 2, "Black"),
+                (self.raw_df["mrace"] == 3, "AIAN"),
+                (self.raw_df["mrace"].isin([4, 5, 6, 7]), "API"),
+                (self.raw_df["mrace"].isin(range(8, 88, 10)), "API"),
+                (self.raw_df["mrace"] == 9, pd.NA)
+                ])
+        elif self.year > 2002 and self.year <= 2019:
+            race_col = "mracerec" if self.year < 2014 else "mbrace"
+            mbrace = pd.Series(pd.NA, index=self.raw_df.index).case_when(
+                [(pd.to_numeric(self.raw_df[race_col]) == 1, "White"),
+                (pd.to_numeric(self.raw_df[race_col]) == 2, "Black"),
+                (pd.to_numeric(self.raw_df[race_col]) == 3, "AIAN"),
+                (pd.to_numeric(self.raw_df[race_col]) == 4, "API"),
+                (pd.to_numeric(self.raw_df[race_col]) == 9, pd.NA)
+                ])
+        # bridged race is not present in data 2020 and beyond
+        elif self.year >= 2020:
+            mbrace = pd.Series(pd.NA, index=self.raw_df.index)
+        self.birth_df.loc[:, "MBRACE4"] = mbrace
+        return None
+
+    def extract_mothers_hispanic(self):
+        """
+        Extract mothers hispanic ethicity, True or False.
+        """
+        if self.year <= 2002:
+            mhisp = pd.Series(pd.NA, index=self.raw_df.index).case_when(
+                [
+                (pd.to_numeric(self.raw_df["orracem"]).isin([1, 2, 3, 4, 5]), True),
+                (pd.to_numeric(self.raw_df["orracem"]).isin([6, 7, 8]), False),
+                (pd.to_numeric(self.raw_df["orracem"]) == 9, pd.NA)
+                ])
+        elif self.year > 2002 and self.year <= 2013:
+            mhisp = pd.Series(pd.NA, index=self.raw_df.index).case_when(
+                [
+                (pd.to_numeric(self.raw_df["mracehisp"]).isin([1, 2, 3, 4, 5]), True),
+                (pd.to_numeric(self.raw_df["mracehisp"]).isin([6, 7, 8]), False),
+                (pd.to_numeric(self.raw_df["mracehisp"]) == 9, pd.NA)
+                ])
+        elif self.year >= 2014:
+            mhisp = pd.Series(pd.NA, index=self.raw_df.index).case_when(
+                [
+                (pd.to_numeric(self.raw_df["mhisp_r"]).isin([1, 2, 3, 4, 5]), True),
+                (pd.to_numeric(self.raw_df["mhisp_r"]).isin([0]), False),
+                (pd.to_numeric(self.raw_df["mhisp_r"]) == 9, pd.NA)
+                ])
+        self.birth_df.loc[:, "MHISP"] = mhisp
         return None
