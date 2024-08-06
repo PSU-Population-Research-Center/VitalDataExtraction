@@ -188,6 +188,8 @@ class NCHSBirthExtraction(BirthExtraction):
             dtype = dts) for sf in sfs]
         self.state_idx = [
             x.merge(fip_abv_df, how = "left") for x in state_idx_raw]
+        self.state_idx[0]["mrstate"] = self.state_idx[0]["mrstate"].fillna("")
+        self.state_idx[1]["mrstate"] = self.state_idx[1]["mrstate"].fillna("")
 
     def read_data(self, select_cols = None, **kwargs):
         """
@@ -209,8 +211,14 @@ class NCHSBirthExtraction(BirthExtraction):
         colspecs = [self.data_dict["pos"][i] for i in colnames]
         dts = {i: self.data_dict["dtype"][i] for i in colnames}
         self.read_state_res_data()
+        num_lines = [
+            sum(1 for _ in z.open(sfs[i])) for i in range(len(self.state_idx))]
         skips = [
-            np.where(x.mrstate != self.state)[0] for x in self.state_idx]
+            list(np.where(x.mrstate != self.state)[0]) for x in self.state_idx]
+        # code to make sure we didnt miss blanks at the end of filed to skip
+        for i in range(len(self.state_idx)):
+            if self.state_idx[i].shape[0] != num_lines[i]:
+                skips[i] += list(range(len(self.state_idx[i]), num_lines[i]))
         raw_df = pd.concat([pd.read_fwf(
             z.open(sfs[i]), names=colnames, colspecs=colspecs,
             dtype = dts, skiprows = skips[i], **kwargs) 
@@ -283,24 +291,25 @@ class NCHSBirthExtraction(BirthExtraction):
         """
         Extract mothers hispanic ethicity, True or False.
         """
+        hisp5 = [1, 2, 3, 4, 5]
         if self.year <= 2002:
             mhisp = pd.Series(pd.NA, index=self.raw_df.index).case_when(
                 [
-                (pd.to_numeric(self.raw_df["orracem"]).isin([1, 2, 3, 4, 5]), True),
+                (pd.to_numeric(self.raw_df["orracem"]).isin(hisp5), True),
                 (pd.to_numeric(self.raw_df["orracem"]).isin([6, 7, 8]), False),
                 (pd.to_numeric(self.raw_df["orracem"]) == 9, pd.NA)
                 ])
         elif self.year > 2002 and self.year <= 2013:
             mhisp = pd.Series(pd.NA, index=self.raw_df.index).case_when(
                 [
-                (pd.to_numeric(self.raw_df["mracehisp"]).isin([1, 2, 3, 4, 5]), True),
+                (pd.to_numeric(self.raw_df["mracehisp"]).isin(hisp5), True),
                 (pd.to_numeric(self.raw_df["mracehisp"]).isin([6, 7, 8]), False),
                 (pd.to_numeric(self.raw_df["mracehisp"]) == 9, pd.NA)
                 ])
         elif self.year >= 2014:
             mhisp = pd.Series(pd.NA, index=self.raw_df.index).case_when(
                 [
-                (pd.to_numeric(self.raw_df["mhisp_r"]).isin([1, 2, 3, 4, 5]), True),
+                (pd.to_numeric(self.raw_df["mhisp_r"]).isin(hisp5), True),
                 (pd.to_numeric(self.raw_df["mhisp_r"]).isin([0]), False),
                 (pd.to_numeric(self.raw_df["mhisp_r"]) == 9, pd.NA)
                 ])
