@@ -188,8 +188,8 @@ class NCHSBirthExtraction(BirthExtraction):
             dtype = dts) for sf in sfs]
         self.state_idx = [
             x.merge(fip_abv_df, how = "left") for x in state_idx_raw]
-        self.state_idx[0]["mrstate"] = self.state_idx[0]["mrstate"].fillna("")
-        self.state_idx[1]["mrstate"] = self.state_idx[1]["mrstate"].fillna("")
+        for i in range(len(self.state_idx)):
+            self.state_idx[i]["mrstate"] = self.state_idx[i]["mrstate"].fillna("")
 
     def read_data(self, select_cols = None, **kwargs):
         """
