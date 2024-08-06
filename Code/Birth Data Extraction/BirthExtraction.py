@@ -309,7 +309,7 @@ class NCHSBirthExtraction(BirthExtraction):
 
 
 if __name__ == "__main__":
-    for year in range(1994, 1995):
+    for year in range(1990, 2021):
         for state in ["OR"]:
             print("Extraction for " + state + " year " + str(year))
             BE = NCHSBirthExtraction(year = year, state = state)
