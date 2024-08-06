@@ -94,11 +94,10 @@ def read_state_fips_df():
     """
     fip_abv_df = pd.read_table(
         "https://www2.census.gov/geo/docs/reference/codes2020/" +\
-        "national_state2020.txt", sep = "|").rename(
-            columns={"STATE": "mrstate", "STATEFP": "stresfip"})
-    fip_abv_df["stresfip"] = fip_abv_df[
-        "stresfip"].astype(str).str.pad(2,fillchar='0')
-    fip_abv_df = fip_abv_df[["mrstate", "stresfip"]]
+        "national_state2020.txt", sep = "|")
+    fip_abv_df["STATEFP"] = fip_abv_df[
+        "STATEFP"].astype(str).str.pad(2,fillchar='0')
+    fip_abv_df = fip_abv_df[["STATE", "STATEFP"]]
     return fip_abv_df
 
 
@@ -123,6 +122,7 @@ class BirthExtraction(object):
         self.source = source
         self.raw_df = None
         self.birth_df = pd.DataFrame()
+        self.fips_df = read_state_fips_df()
 
     def read_data(self):
         return None
@@ -136,9 +136,11 @@ class BirthExtraction(object):
         return None
     
     def write_data(self):
-        out_dest = "vol/share/population_research/_PROJECTS/PSUPRC_VR/" +\
-            "BIRTHS/" + str(self.year), ".csv"
-        self.birth_df.to_csv(out_dest)
+        base = "/vol/share/population_research/_PROJECTS/PSUPRC_VR/BIRTHS/"
+        odir = base + self.state
+        ofile = odir + "/{}.csv".format(self.year)
+        os.makedirs(odir, exist_ok=True)
+        self.birth_df.to_csv(ofile, index = False)
         return None
 
 
@@ -174,7 +176,8 @@ class NCHSBirthExtraction(BirthExtraction):
         ----------
         None
         """
-        fip_abv_df = read_state_fips_df()
+        fip_abv_df = self.fips_df.copy().rename(columns={
+            "STATE":"mrstate", "STATEFP":"stresfip"})
         z = zipfile.ZipFile(self.source)
         sfs = [x for x in z.namelist() if x.endswith("txt")]
         colnames = ["mrstate" if self.year >= 2003 else "stresfip"]
@@ -215,7 +218,9 @@ class NCHSBirthExtraction(BirthExtraction):
         self.raw_df = raw_df
         self.birth_df = self.raw_df[[]].copy()
         self.birth_df.loc[:,"mrstate"] = self.state
-        self.birth_df = self.birth_df.merge(read_state_fips_df(), how = "left")
+        merged_fip_df = self.fips_df.copy().rename(columns={
+            "STATE":"mrstate", "STATEFP":"stresfip"})
+        self.birth_df = self.birth_df.merge(merged_fip_df, how = "left")
         self.birth_df = self.birth_df.rename(columns={
             "mrstate": "STATE", "stresfip": "STATEFP"})
 
@@ -301,3 +306,17 @@ class NCHSBirthExtraction(BirthExtraction):
                 ])
         self.birth_df.loc[:, "MHISP"] = mhisp
         return None
+
+
+if __name__ == "__main__":
+    for year in range(1994, 1995):
+        for state in ["OR"]:
+            print("Extraction for " + state + " year " + str(year))
+            BE = NCHSBirthExtraction(year = year, state = state)
+            BE.read_data()
+            BE.extract_county()
+            BE.extract_age()
+            BE.extract_mothers_bridged_race4()
+            BE.extract_mothers_hispanic()
+            BE.inspect_data()
+            BE.write_data()
