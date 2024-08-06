@@ -46,23 +46,23 @@ singularity run --bind /vol:/vol ./singularity-conda.sif ipython
 ### Mother Foreign Born
 Variable: MFBORN  
 Domain: Boolean
-Method: `self.extract_mothers_fborn()`
+Method: `self.extract_mothers_fborn()`  
 Description: Mothers foreign born status, whether they were born in the the US or somewhere else. 
 
 ### Fathers Bridged Race 4
 Variable: FBRACE4  
 Domain: String
-Method: `self.extract_fathers_bridged_race4()`
+Method: `self.extract_fathers_bridged_race4()`  
 Description: Fathers bridged race. Must be one of White, Black, API, or AIAN.
 
 ### Father Hispanic
 Variable: FHISP  
 Domain: Boolean
-Method: `self.extract_fathers_hispanic()`
+Method: `self.extract_fathers_hispanic()`  
 Description: Fathers Hispanic Identity.
 
 ### Father Foreign Born
 Variable: FFBORN  
 Domain: Boolean
-Method: `self.extract_fathers_fborn()`
+Method: `self.extract_fathers_fborn()`  
 Description: Fathers foreign born status, whether they were born in the the US or somewhere else. 
