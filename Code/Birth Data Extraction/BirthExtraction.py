@@ -224,6 +224,7 @@ class NCHSBirthExtraction(BirthExtraction):
             dtype = dts, skiprows = skips[i], **kwargs) 
             for i in range(len(self.state_idx))])
         self.raw_df = raw_df
+        self.raw_df.reset_index(inplace=True, drop = True)
         self.birth_df = self.raw_df[[]].copy()
         self.birth_df.loc[:,"mrstate"] = self.state
         merged_fip_df = self.fips_df.copy().rename(columns={
@@ -318,7 +319,7 @@ class NCHSBirthExtraction(BirthExtraction):
 
 
 if __name__ == "__main__":
-    for year in range(1990, 2021):
+    for year in range(2000, 2021):
         for state in ["OR"]:
             print("Extraction for " + state + " year " + str(year))
             BE = NCHSBirthExtraction(year = year, state = state)
