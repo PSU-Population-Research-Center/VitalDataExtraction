@@ -251,7 +251,7 @@ class NCHSBirthExtraction(BirthExtraction):
         Extracts county (3 digit fips code) from a loaded raw NCHS data frame.
         """
         if self.year <= 2002:
-            county_df = self.raw_df["cntyres"].apply(lambda x: x[2:5])
+            county_df = self.raw_df["cntyrfip"].apply(lambda x: x[2:5])
         elif self.year >= 2003:
             county_df = self.raw_df["mrcntyfips"].copy()
         self.birth_df.loc[:, "COUNTYFP"] = self.birth_df["STATEFP"].copy() +\
@@ -319,7 +319,7 @@ class NCHSBirthExtraction(BirthExtraction):
 
 
 if __name__ == "__main__":
-    for year in range(2000, 2021):
+    for year in range(1990, 2021):
         for state in ["OR"]:
             print("Extraction for " + state + " year " + str(year))
             BE = NCHSBirthExtraction(year = year, state = state)
