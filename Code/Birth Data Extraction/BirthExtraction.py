@@ -233,7 +233,7 @@ class NCHSBirthExtraction(BirthExtraction):
         self.birth_df = self.birth_df.rename(columns={
             "mrstate": "STATE", "stresfip": "STATEFP"})
 
-    def extract_age(self):
+    def extract_mothers_age(self):
         """
         Extracts single year age from a loaded raw NCHS data frame.
         """
@@ -243,7 +243,7 @@ class NCHSBirthExtraction(BirthExtraction):
             age_df = self.raw_df["mager41"] + 13
         elif self.year > 2003:
             age_df = self.raw_df["mager"]
-        self.birth_df.loc[:, "AGE"] = age_df
+        self.birth_df.loc[:, "MAGE"] = age_df
         return None
 
     def extract_county(self):
@@ -325,7 +325,7 @@ if __name__ == "__main__":
             BE = NCHSBirthExtraction(year = year, state = state)
             BE.read_data()
             BE.extract_county()
-            BE.extract_age()
+            BE.extract_mothers_age()
             BE.extract_mothers_bridged_race4()
             BE.extract_mothers_hispanic()
             BE.inspect_data()

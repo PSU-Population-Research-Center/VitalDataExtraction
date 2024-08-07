@@ -45,9 +45,24 @@ singularity run --bind /vol:/vol ./singularity-conda.sif ipython
 
 ### Mother Foreign Born
 Variable: MFBORN  
-Domain: Boolean
+Domain: Boolean  
 Method: `self.extract_mothers_fborn()`  
-Description: Mothers foreign born status, whether they were born in the the US or somewhere else. 
+Description: Mothers foreign born status, whether they were born in the the US or somewhere else.
+
+### Mother Education
+Variable: MEDU  
+Domain: String, "Less than High School", "High School Grad", "Bachelor's Degree"  
+Method: `self.extract_mothers_edu()`  
+Description: Mothers education. For early NCHS years high school diploma and
+bachelors degree was not recorded. For those years we shall use at least 4 years
+of high school to denote high school grad and use at least 4 years of college to
+denote bachelors degree.  
+
+### Fathers Age
+Variable: FAGE  
+Domain: Numeric  
+Method: `self.extract_fathers_age()`  
+Description: Fathers single year age.
 
 ### Fathers Bridged Race 4
 Variable: FBRACE4  
@@ -66,3 +81,9 @@ Variable: FFBORN
 Domain: Boolean
 Method: `self.extract_fathers_fborn()`  
 Description: Fathers foreign born status, whether they were born in the the US or somewhere else. 
+
+### Sex of Child
+Variable: SEX  
+Domain: String, "Male" or "Female"  
+Method: `self.extract_sex()`  
+Description: Extract binary sex of child.
