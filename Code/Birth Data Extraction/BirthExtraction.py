@@ -257,6 +257,7 @@ class NCHSBirthExtraction(BirthExtraction):
             county_df = self.raw_df["cntyrfip"].apply(lambda x: x[2:5])
         elif self.year >= 2003:
             county_df = self.raw_df["mrcntyfips"].copy()
+        county_df.replace({"000": pd.NA, "999": pd.NA}, inplace=True)
         self.birth_df.loc[:, "COUNTYFP"] = self.birth_df["STATEFP"].copy() +\
             county_df
         return None
