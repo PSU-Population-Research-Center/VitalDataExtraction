@@ -7,6 +7,7 @@ from urllib.request import urlopen
 import re
 import numpy as np
 
+
 def read_nchs_df(year):
     """
     Pulls specifications for reading an NCHS birth file from a fwf from the 
@@ -59,8 +60,10 @@ def read_nchs_dict(year):
     dldf["end"] = dldf[3].apply(
         lambda x: int(re.findall(r'\d+', x)[0])) + dldf["start"]
     dldf["var"] = dldf[2]
-    dldf["type"] = dldf[3].apply(
-        lambda x: ["str", "Int64"][x[2] == "f"])
+    dldf["type"] = pd.Series("str", index=dldf.index).case_when(
+                [(dldf[1] == "int", "Int64"),
+                 (dldf[1] == "byte", "Int64"),
+                 (dldf[1] == "double", "float64")])
     r_ = range(dldf.shape[0])
     src_dct = {
         dldf["var"][i]: tuple([dldf["start"][i], dldf["end"][i]]) for i in r_}
