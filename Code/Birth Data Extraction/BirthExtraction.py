@@ -192,7 +192,8 @@ class NCHSBirthExtraction(BirthExtraction):
         self.state_idx = [
             x.merge(fip_abv_df, how = "left") for x in state_idx_raw]
         for i in range(len(self.state_idx)):
-            self.state_idx[i]["mrstate"] = self.state_idx[i]["mrstate"].fillna("")
+            self.state_idx[i]["mrstate"] = \
+                self.state_idx[i]["mrstate"].fillna("")
 
     def read_data(self, select_cols = None, **kwargs):
         """
@@ -301,14 +302,14 @@ class NCHSBirthExtraction(BirthExtraction):
             mhisp = pd.Series(pd.NA, index=self.raw_df.index).case_when(
                 [
                 (pd.to_numeric(self.raw_df["orracem"]).isin(hisp5), True),
-                (pd.to_numeric(self.raw_df["orracem"]).isin([6, 7, 8]), False),
+                (pd.to_numeric(self.raw_df["orracem"]).isin([6,7,8]), False),
                 (pd.to_numeric(self.raw_df["orracem"]) == 9, pd.NA)
                 ])
         elif self.year > 2002 and self.year <= 2013:
             mhisp = pd.Series(pd.NA, index=self.raw_df.index).case_when(
                 [
                 (pd.to_numeric(self.raw_df["mracehisp"]).isin(hisp5), True),
-                (pd.to_numeric(self.raw_df["mracehisp"]).isin([6, 7, 8]), False),
+                (pd.to_numeric(self.raw_df["mracehisp"]).isin([6,7,8]), False),
                 (pd.to_numeric(self.raw_df["mracehisp"]) == 9, pd.NA)
                 ])
         elif self.year >= 2014:
