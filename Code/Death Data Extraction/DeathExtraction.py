@@ -10,7 +10,7 @@ import numpy as np
 
 def read_nchs_df(year):
     """
-    Pulls specifications for reading an NCHS birth file from a fwf from the 
+    Pulls specifications for reading an NCHS death file from a fwf from the 
     NBER website in data frame format.
 
     Parameters
@@ -21,9 +21,10 @@ def read_nchs_df(year):
     Returns
     -------
     pd.DataFrame
-        a data frame with text for reading fixed width NCHS birth file
+        a data frame with text for reading fixed width NCHS death file
     """
-    surl = "https://data.nber.org/nvss/natality/programs/dct/natality" +\
+    mort_str = "mortality" if year >= 2018 else "mort"
+    surl = "https://data.nber.org/nvss/mortality/programs/dct/" + mort_str +\
         str(year) + ".dct"
     source_lines = [str(l).replace("b'", "") for l in urlopen(surl)]
     trimmed_lines = [re.sub(" *\\)", ")", str(l)) for l in source_lines]
@@ -42,7 +43,7 @@ def read_nchs_df(year):
 
 def read_nchs_dict(year):
     """
-    Pulls specifications for reading an NCHS birth file from a fwf from the 
+    Pulls specifications for reading an NCHS death file from a fwf from the 
     NBER website.
 
     Parameters
@@ -53,17 +54,9 @@ def read_nchs_dict(year):
     Returns
     -------
     dict
-        a dictionary with specifications for reading fixed width NCHS birth file
+        a dictionary with specifications for reading fixed width NCHS death file
     """
     dldf = read_nchs_df(year)
-    # the post 2023 data is being read in weird so we have to hack in the
-    # column structure to be read correctly
-    if year >= 2023:
-        dldf[0] = dldf[0] + dldf[1]
-        dldf[1] = dldf[2]
-        dldf[2] = dldf[3]
-        dldf[3] = dldf[4]
-        dldf[4] = dldf[5]
     dldf["start"] = dldf[0].apply(lambda x: int(re.findall(r'\d+', x)[0])-1)
     dldf["end"] = dldf[3].apply(
         lambda x: int(re.findall(r'\d+', x)[0])) + dldf["start"]
@@ -76,16 +69,15 @@ def read_nchs_dict(year):
     src_dct = {
         dldf["var"][i]: tuple([dldf["start"][i], dldf["end"][i]]) for i in r_}
     src_dtype = {dldf["var"][i]: dldf["type"][i] for i in r_}
-    if year >= 2003 and year <= 2013:
-        src_dct["mrstate"] = tuple([108, 110])
-        src_dct["mrcntyfips"] = tuple([113, 116])
-        src_dtype["mrstate"] = "str"
-        src_dtype["mrcntyfips"] = "str"
-    if year >= 2014 and year <= 2022:
-        src_dct["mrstate"] = tuple([88, 90])
-        src_dct["mrcntyfips"] = tuple([90, 93])
-        src_dtype["mrstate"] = "str"
-        src_dtype["mrcntyfips"] = "str"
+    if year >= 2003:
+        src_dct["state"] = tuple([28, 30])
+        src_dct["cntyfips"] = tuple([34, 37])
+        src_dct["pregstat"] = tuple([142, 143])
+    if year >= 2003:
+        src_dtype["state"] = "str"
+        src_dtype["cntyfips"] = "Int64"
+        src_dtype["pregstat"] = "str"
+    src_dct["record_2"] = tuple([348, 353])
     out_dct = {"pos": src_dct, "dtype": src_dtype}
     return out_dct
 
@@ -112,9 +104,9 @@ def read_state_fips_df():
     return fip_abv_df
 
 
-class BirthExtraction(object):
+class DeathExtraction(object):
     """
-    A generic class used to extract birth data from various file types.
+    A generic class used to extract death data from various file types.
 
     ...
 
@@ -132,7 +124,7 @@ class BirthExtraction(object):
         self.state = state
         self.source = source
         self.raw_df = None
-        self.birth_df = pd.DataFrame()
+        self.death_df = pd.DataFrame()
         self.fips_df = read_state_fips_df()
 
     def read_data(self):
@@ -140,10 +132,10 @@ class BirthExtraction(object):
     
     def inspect_data(self):
         print("NA Counts")
-        print(self.birth_df.apply(lambda x: x.isna().sum(), axis = 0))
-        print(self.birth_df.describe())
-        for c in self.birth_df.columns:
-            print(self.birth_df[c].value_counts())
+        print(self.death_df.apply(lambda x: x.isna().sum(), axis = 0))
+        print(self.death_df.describe())
+        for c in self.death_df.columns:
+            print(self.death_df[c].value_counts())
         return None
     
     def write_data(self):
@@ -151,13 +143,13 @@ class BirthExtraction(object):
         odir = base + self.state
         ofile = odir + "/{}.csv".format(self.year)
         os.makedirs(odir, exist_ok=True)
-        self.birth_df.to_csv(ofile, index = False)
+        self.death_df.to_csv(ofile, index = False)
         return None
 
 
-class NCHSBirthExtraction(BirthExtraction):
+class NCHSDeathExtraction(DeathExtraction):
     """
-    Class used to extract birth data from NCHS files.
+    Class used to extract death data from NCHS files.
 
     ...
 
@@ -168,16 +160,16 @@ class NCHSBirthExtraction(BirthExtraction):
     state : str
         state of data to extract
     """
-    def __init__(self, year, state):
+    def __init__(self, year, state = None):
         geo_stub = "" if year < 1994 else "USPS"
         # NOTE: This needs to be updated to wherever your zipped folders are
-        src_str = "/vol/share/population_research/_DATA/NCHS_BIRTH/" +\
-            "NatAC{}/NATL{}{}.AllCnty.zip".format(year, year, geo_stub)
+        src_str = "/vol/share/population_research/_DATA/NCHS_DEATH/" +\
+            "MortAC{}/MULT{}.USPSAllCnty.zip".format(year, year)
         super().__init__(year, state, source = src_str)
         self.state_idx = None
         self.data_dict = read_nchs_dict(year)
-        self.data_dict_src = "https://data.nber.org/nvss/natality/" +\
-            "programs/dct/natality" + str(year) + ".dct"
+        self.data_dict_src = "https://data.nber.org/nvss/mortality/" +\
+            "programs/dct/mortality" + str(year) + ".dct"
 
     def read_state_res_data(self):
         """
@@ -189,10 +181,10 @@ class NCHSBirthExtraction(BirthExtraction):
         None
         """
         fip_abv_df = self.fips_df.copy().rename(columns={
-            "STATE":"mrstate", "STATEFP":"stresfip"})
+            "STATE":"state", "STATEFP":"cntyfips"})
         z = zipfile.ZipFile(self.source)
         sfs = [x for x in z.namelist() if x.endswith("txt")]
-        colnames = ["mrstate" if self.year >= 2003 else "stresfip"]
+        colnames = ["state" if self.year >= 2003 else "stresfip"]
         colspecs = [self.data_dict["pos"][i] for i in colnames]
         dts = {i: "str" for i in colnames}
         state_idx_raw = [pd.read_fwf(
@@ -201,8 +193,8 @@ class NCHSBirthExtraction(BirthExtraction):
         self.state_idx = [
             x.merge(fip_abv_df, how = "left") for x in state_idx_raw]
         for i in range(len(self.state_idx)):
-            self.state_idx[i]["mrstate"] = \
-                self.state_idx[i]["mrstate"].fillna("")
+            self.state_idx[i]["state"] = \
+                self.state_idx[i]["state"].fillna("")
 
     def read_data(self, select_cols = None, **kwargs):
         """
@@ -223,59 +215,53 @@ class NCHSBirthExtraction(BirthExtraction):
             self.data_dict["pos"].keys())
         colspecs = [self.data_dict["pos"][i] for i in colnames]
         dts = {i: self.data_dict["dtype"][i] for i in colnames}
-        skips = [[],[]]
         # self.read_state_res_data()
         # num_lines = [
         #     sum(1 for _ in z.open(sfs[i])) for i in range(len(self.state_idx))]
         # skips = [
-        #     list(np.where(x.mrstate != self.state)[0]) for x in self.state_idx]
-        # # code to make sure we didnt miss blanks at the end of filed to skip
+        #     list(np.where(x.state != self.state)[0]) for x in self.state_idx]
+        skips = [[],[]]
+        # code to make sure we didnt miss blanks at the end of filed to skip
         # for i in range(len(self.state_idx)):
         #     if self.state_idx[i].shape[0] != num_lines[i]:
         #         skips[i] += list(range(len(self.state_idx[i]), num_lines[i]))
         raw_df = pd.concat([pd.read_fwf(
-            z.open(sfs[i]), names=colnames, colspecs=colspecs,
+            z.open(sfs[0]), names=colnames, colspecs=colspecs,
             dtype = dts, skiprows = skips[i], **kwargs) 
             for i in range(len(skips))])
         self.raw_df = raw_df
         self.raw_df.reset_index(inplace=True, drop = True)
-        self.birth_df = self.raw_df[[]].copy()
-        self.birth_df.loc[:,"mrstate"] = self.state
-        merged_fip_df = self.fips_df.copy().rename(columns={
-            "STATE":"mrstate", "STATEFP":"stresfip"})
-        self.birth_df = self.birth_df.merge(merged_fip_df, how = "left")
-        self.birth_df = self.birth_df.rename(columns={
-            "mrstate": "STATE", "stresfip": "STATEFP"})
+        self.death_df = self.raw_df[[]].copy()
+        # self.death_df.loc[:,"state"] = self.state
+        # merged_fip_df = self.fips_df.copy().rename(columns={
+        #     "STATE":"state", "STATEFP":"stresfip"})
+        # self.death_df = self.death_df.merge(merged_fip_df, how = "left")
+        # self.death_df = self.death_df.rename(columns={
+        #     "state": "STATE", "stresfip": "STATEFP"})
 
-    def extract_mothers_age(self):
+    def extract_age(self):
         """
         Extracts single year age from a loaded raw NCHS data frame.
         """
-        if self.year <= 2002:
-            age_df = self.raw_df["dmage"]
-        elif self.year == 2003:
-            age_df = self.raw_df["mager41"] + 13
-        elif self.year > 2003:
-            age_df = self.raw_df["mager"]
-        self.birth_df.loc[:, "MAGE"] = age_df
+        if self.year > 2003:
+            age_df = self.raw_df["age"]
+        self.death_df.loc[:, "AGE"] = age_df
         return None
 
     def extract_county(self):
         """
         Extracts county (3 digit fips code) from a loaded raw NCHS data frame.
         """
-        if self.year <= 2002:
-            county_df = self.raw_df["cntyrfip"].apply(lambda x: x[2:5])
-        elif self.year >= 2003:
-            county_df = self.raw_df["mrcntyfips"].copy()
+        if self.year >= 2003:
+            county_df = self.raw_df["cntyfips"].copy()
         county_df.replace({"000": pd.NA, "999": pd.NA}, inplace=True)
-        self.birth_df.loc[:, "COUNTYFP"] = self.birth_df["STATEFP"].copy() +\
+        self.death_df.loc[:, "COUNTYFP"] = self.death_df["STATEFP"].copy() +\
             county_df
         return None
 
     def extract_mothers_bridged_race4(self):
         """
-        Extracts brideged race group from NCHS data. Observations will be one of
+        Extracts bridged race group from NCHS data. Observations will be one of
         the following 4 groups. White, Black, API (Asian Pacific Islander),
         AIAN (American Indian Alaskan Native).
         """
@@ -300,7 +286,37 @@ class NCHSBirthExtraction(BirthExtraction):
         # bridged race is not present in data 2020 and beyond
         elif self.year >= 2020:
             mbrace = pd.Series(pd.NA, index=self.raw_df.index)
-        self.birth_df.loc[:, "MBRACE4"] = mbrace
+        self.death_df.loc[:, "MBRACE4"] = mbrace
+        return None
+    
+    def extract_mothers_race40(self):
+        """
+        Extracts multiple race group from NCHS data. Observations will be one of
+        the following 40 groups. See page 15 here
+        https://ftp.cdc.gov/pub/Health_Statistics/NCHS/Dataset_Documentation/DVS/mortality/2024-Mortality-Public-Use-File-Documentation.pdf
+        """
+        if self.year <= 2002:
+            mbrace = pd.Series(pd.NA, index=self.raw_df.index).case_when(
+                [(self.raw_df["mrace"] == 1, "White"),
+                (self.raw_df["mrace"] == 2, "Black"),
+                (self.raw_df["mrace"] == 3, "AIAN"),
+                (self.raw_df["mrace"].isin([4, 5, 6, 7]), "API"),
+                (self.raw_df["mrace"].isin(range(8, 88, 10)), "API"),
+                (self.raw_df["mrace"] == 9, pd.NA)
+                ])
+        elif self.year > 2002 and self.year <= 2019:
+            race_col = "mracerec" if self.year < 2014 else "mbrace"
+            mbrace = pd.Series(pd.NA, index=self.raw_df.index).case_when(
+                [(pd.to_numeric(self.raw_df[race_col]) == 1, "White"),
+                (pd.to_numeric(self.raw_df[race_col]) == 2, "Black"),
+                (pd.to_numeric(self.raw_df[race_col]) == 3, "AIAN"),
+                (pd.to_numeric(self.raw_df[race_col]) == 4, "API"),
+                (pd.to_numeric(self.raw_df[race_col]) == 9, pd.NA)
+                ])
+        # bridged race is not present in data 2020 and beyond
+        elif self.year < 2018:
+            mbrace = pd.Series(pd.NA, index=self.raw_df.index)
+        self.death_df.loc[:, "MBRACE4"] = mbrace
         return None
 
     def extract_mothers_hispanic(self):
@@ -329,16 +345,17 @@ class NCHSBirthExtraction(BirthExtraction):
                 (pd.to_numeric(self.raw_df["mhisp_r"]).isin([0]), False),
                 (pd.to_numeric(self.raw_df["mhisp_r"]) == 9, pd.NA)
                 ])
-        self.birth_df.loc[:, "MHISP"] = mhisp
+        self.death_df.loc[:, "MHISP"] = mhisp
         return None
 
 
 if __name__ == "__main__":
-    for year in range(2018, 2023):
+    for year in range(2024, 2025):
         for state in ["OR"]:
             print("Extraction for " + state + " year " + str(year))
-            BE = NCHSBirthExtraction(year = year, state = "OR")
-            BE.read_data(select_cols = ["mager", "mrstate", "mrcntyfips"])
-            BE.raw_df.to_csv(
-                "~/Documents/maternal_mortality/Data/Births/{}.csv".format(year),
+            DE = NCHSDeathExtraction(year = year, state = state)
+            DE.read_data(select_cols = [
+                "age", "marstat", "sex", "ucod", "pregstat", "monthdth", "race40", "hispanic"])
+            DE.raw_df.to_csv(
+                "~/Documents/maternal_mortality/Data/Deaths/{}.csv".format(year),
                 index = False)

@@ -19,7 +19,7 @@ Race variables change over time and given that this process in part tries to har
 import NCHSBirthExtraction from BirthExtraction
 
 # loads an object which will read data for a year state combination
-BirthModule = NCHSBirthExtraction(1994, "OR")
+BirthModule = NCHSBirthExtraction(1994)
 
 # reads in the raw data
 BirthModule.read_data()
